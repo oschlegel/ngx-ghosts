@@ -24,13 +24,15 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.800.0",
+    "@angular-devkit/build-ng-packagr": "~0.800.0",
     "@angular/cli": "~8.0.3",
     "@angular/compiler-cli": "~8.0.1",
     "@angular/language-service": "~8.0.1",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
-    "codelyzer": "^5.0.0",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.1.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -38,9 +40,15 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^5.1.0",
     "protractor": "~5.4.0",
+    "rxjs-tslint-rules": "^4.24.2",
     "ts-node": "~7.0.0",
+    "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "~3.4.3"
   }
 }

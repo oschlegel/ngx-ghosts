@@ -18,6 +18,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-ghosts": [
+        "dist/ngx-ghosts"
+      ],
+      "ngx-ghosts/*": [
+        "dist/ngx-ghosts/*"
+      ]
+    }
   }
 }

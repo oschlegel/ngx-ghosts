@@ -1,1 +1,29 @@
-<div ghostTextLine>Hallo i bims</div>
+<h1>
+  <span *ghostTextLine="active; length: 26">Lorem ipsum dolor sit amet</span>
+</h1>
+<h2>
+  <span *ghostTextLine="active; length: 26">Lorem ipsum dolor sit amet</span>
+</h2>
+<h3>
+  <span *ghostTextLine="active; length: 26">Lorem ipsum dolor sit amet</span>
+</h3>
+<h4>
+  <span *ghostTextLine="active; length: 26">Lorem ipsum dolor sit amet</span>
+</h4>
+<h5>
+  <span *ghostTextLine="active; length: 26">Lorem ipsum dolor sit amet</span>
+</h5>
+<h6>
+  <span *ghostTextLine="active; length: 26">Lorem ipsum dolor sit amet</span>
+</h6>
+<div>
+  <span *ghostTextLine="active; length: 26">Lorem ipsum dolor sit amet</span>
+</div>
+
+<p>
+  <button (click)="active = !active">Toggle</button>
+</p>
+<p>
+  <span>Length: </span>
+  <input #lengthInput type="text" (keyup)="updateLength(lengthInput.value)" [value]="length" />
+</p>

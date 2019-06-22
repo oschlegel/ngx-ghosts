@@ -1,8 +1,11 @@
-/* $skeleton-text-line-background-color: #e3e4e4;
-$skeleton-text-line-highlight-color: #eff0f1;
-$skeleton-text-line-animation-duration: 2000ms;
+$ghost-base-color: #e3e4e4;
+$ghost-glow-color: #eff0f1;
+$ghost-glow-animation-duration: 2000ms;
+$ghost-glow-animation-function: linear;
+$ghost-font-top-spacing: 0.15em;
+$ghost-font-bottom-spacing: 0.2em;
 
-@keyframes skeleton-text-line-animation {
+@keyframes ghost-glow-keyframe {
   0% {
     transform: translateX(-100%);
   }
@@ -12,73 +15,52 @@ $skeleton-text-line-animation-duration: 2000ms;
   }
 }
 
-.skeleton-text-line {
+.ghost {
   position: relative;
   display: inline-block;
-  max-width: 100%;
   overflow-x: hidden;
   vertical-align: top; // To remove extra space created by overflow-x: hidden;
-  color: rgba(0, 0, 0, 0);
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.001) 0%,
-    rgba(0, 0, 0, 0.001) 9.999%,
-    $skeleton-text-line-background-color 10%,
-    $skeleton-text-line-background-color 90%,
-    rgba(0, 0, 0, 0.001) 90.001%,
-    rgba(0, 0, 0, 0.001) 100%
-  );
-
-  &::after {
-    content: '&nbsp;';
-    position: absolute;
-    top: 10%;
-    left: 0;
-    height: 80%;
-    width: 100%;
-    background: linear-gradient(
-      to right,
-      opacify($skeleton-text-line-background-color, 0.001) 3%,
-      opacify($skeleton-text-line-highlight-color, 0.05) 50%,
-      opacify($skeleton-text-line-background-color, 0.001) 97%
-    );
-    animation: skeleton-text-line-animation $skeleton-text-line-animation-duration infinite linear;
-  }
-
-  &--full-width {
-    width: 100%;
-  }
-} */
-
-$ghost-base-color: #e3e4e4;
-$ghost-text-line-font-top-spacing: 0.15em;
-$ghost-text-line-font-bottom-spacing: 0.2em;
-
-.ghost-text-line {
-  position: relative;
   max-width: 100%;
   color: rgba(0, 0, 0, 0);
-  /* background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.001) 0%,
-    rgba(0, 0, 0, 0.001) 9.999%,
-    $ghost-base-color 10%,
-    $ghost-base-color 90%,
-    rgba(0, 0, 0, 0.001) 90.001%,
-    rgba(0, 0, 0, 0.001) 100%
-  ); */
-  /* background-color: $ghost-base-color; */
 
-  &__inner {
+  &::before {
+    content: '&nbsp;';
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin-top: $ghost-text-line-font-top-spacing;
-    margin-bottom: $ghost-text-line-font-bottom-spacing;
-    overflow-x: hidden;
-    vertical-align: top; // To remove extra space created by overflow-x: hidden;
     background-color: $ghost-base-color;
+  }
+
+  &::after {
+    content: '&nbsp;';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.001) 3%,
+      opacify($ghost-glow-color, 0.05) 50%,
+      rgba(0, 0, 0, 0.001) 97%
+    );
+    animation-duration: $ghost-glow-animation-duration;
+    animation-name: ghost-glow-keyframe;
+    animation-iteration-count: infinite;
+    animation-timing-function: $ghost-glow-animation-function;
+  }
+
+  &--text {
+    &::before {
+      top: $ghost-font-top-spacing;
+      bottom: $ghost-font-bottom-spacing;
+    }
+
+    &::after {
+      top: $ghost-font-top-spacing;
+      bottom: $ghost-font-bottom-spacing;
+    }
   }
 }

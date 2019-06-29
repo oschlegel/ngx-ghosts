@@ -1,3 +1,7 @@
+<h1>Ghost Text</h1>
+
+<h2>Headlines</h2>
+
 <h1>
   <span *ghostText="active; length: 26">Lorem ipsum dolor sit amet</span>
 </h1>
@@ -16,8 +20,35 @@
 <h6>
   <span *ghostText="active; length: 26">Lorem ipsum dolor sit amet</span>
 </h6>
+
+<h2>Simple text</h2>
+
 <div>
   <span *ghostText="active; length: 26">Lorem ipsum dolor sit amet</span>
+</div>
+
+<h2>Multiple texts layout</h2>
+
+<div class="texts-layout">
+  <div class="texts-layout__column">
+    <span class="texts-layout__text">
+      <span *ghostText="active">Lorem ipsum dolor sit amet</span>
+    </span>
+    <span class="texts-layout__text">
+      <span *ghostText="active; length: 63">Lorem ipsum dolor sit amet</span>
+    </span>
+  </div>
+  <div class="texts-layout__column">
+    <span class="texts-layout__text">
+      <span *ghostText="active; length: 26">Lorem ipsum dolor sit amet</span>
+    </span>
+    <span class="texts-layout__text">
+      <span *ghostText="active; length: 54">Lorem ipsum dolor sit amet</span>
+    </span>
+    <span class="texts-layout__text">
+      <span *ghostText="active; length: 33">Lorem ipsum dolor sit amet</span>
+    </span>
+  </div>
 </div>
 
 <p>

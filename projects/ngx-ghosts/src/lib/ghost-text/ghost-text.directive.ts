@@ -9,6 +9,7 @@ import {
   ComponentRef
 } from '@angular/core';
 import { GhostTextGhostComponent } from '../ghost-text-ghost/ghost-text-ghost.component';
+import { GhostTextLength } from '../models';
 
 @Directive({
   selector: '[ghostText]'
@@ -20,14 +21,14 @@ export class GhostTextDirective implements OnInit {
   }
 
   @Input()
-  set ghostTextLength(value: number) {
+  set ghostTextLength(value: GhostTextLength) {
     this._length = value;
     this.updateGhostLength(value);
   }
 
   private componentFactory: ComponentFactory<GhostTextGhostComponent>;
   private componentRef: ComponentRef<GhostTextGhostComponent>;
-  private _length = 10;
+  private _length: GhostTextLength = 'fill';
 
   constructor(
     // tslint:disable-next-line:no-any
@@ -52,7 +53,7 @@ export class GhostTextDirective implements OnInit {
     }
   }
 
-  private updateGhostLength(length: number) {
+  private updateGhostLength(length: GhostTextLength) {
     if (this.componentRef) {
       this.componentRef.instance.textLength = length;
     }

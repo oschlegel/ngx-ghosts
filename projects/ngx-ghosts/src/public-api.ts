@@ -3,4 +3,4 @@
  */
 
 export * from './lib/ngx-ghosts.module';
-export * from './lib/ghost-text-line/ghost-text-line.directive';
+export * from './lib/ghost-text/ghost-text.directive';

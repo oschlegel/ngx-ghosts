@@ -8,25 +8,25 @@ import {
   ComponentFactory,
   ComponentRef
 } from '@angular/core';
-import { GhostTextLineGhostComponent } from '../ghost-text-line-ghost/ghost-text-line-ghost.component';
+import { GhostTextGhostComponent } from '../ghost-text-ghost/ghost-text-ghost.component';
 
 @Directive({
-  selector: '[ghostTextLine]'
+  selector: '[ghostText]'
 })
-export class GhostTextLineDirective implements OnInit {
+export class GhostTextDirective implements OnInit {
   @Input()
-  set ghostTextLine(value: boolean) {
+  set ghostText(value: boolean) {
     this.toggleGhost(value);
   }
 
   @Input()
-  set ghostTextLineLength(value: number) {
+  set ghostTextLength(value: number) {
     this._length = value;
     this.updateGhostLength(value);
   }
 
-  private componentFactory: ComponentFactory<GhostTextLineGhostComponent>;
-  private componentRef: ComponentRef<GhostTextLineGhostComponent>;
+  private componentFactory: ComponentFactory<GhostTextGhostComponent>;
+  private componentRef: ComponentRef<GhostTextGhostComponent>;
   private _length = 10;
 
   constructor(
@@ -35,11 +35,11 @@ export class GhostTextLineDirective implements OnInit {
     private viewContainer: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver
   ) {
-    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostTextLineGhostComponent);
+    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostTextGhostComponent);
   }
 
   ngOnInit(): void {
-    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostTextLineGhostComponent);
+    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostTextGhostComponent);
   }
 
   private toggleGhost(active: boolean) {

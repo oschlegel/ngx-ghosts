@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GhostTextLineGhostComponent } from './ghost-text-line-ghost.component';
+import { GhostTextGhostComponent } from './ghost-text-ghost.component';
 
 describe('GhostTextLineGhostComponent', () => {
-  let component: GhostTextLineGhostComponent;
-  let fixture: ComponentFixture<GhostTextLineGhostComponent>;
+  let component: GhostTextGhostComponent;
+  let fixture: ComponentFixture<GhostTextGhostComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GhostTextLineGhostComponent ]
-    })
-    .compileComponents();
+      declarations: [GhostTextGhostComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GhostTextLineGhostComponent);
+    fixture = TestBed.createComponent(GhostTextGhostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

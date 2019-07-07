@@ -1,3 +1,3 @@
-export type GhostAnimationStrategy = 'EqualStartAndEnd' | 'EqualStartAndSpeed' | 'OneGlow';
+export type GhostAnimationStrategy = 'EqualStartAndEnd' | 'EqualStartAndSpeed' | 'OneGhost';
 
 export type GhostTextLength = number | 'fill';

@@ -39,7 +39,7 @@ export class GhostTextGhostComponent {
       case 'EqualStartAndEnd':
       case 'EqualStartAndSpeed':
         return '0px';
-      case 'OneGlow':
+      case 'OneGhost':
         const left = this.elementRef.nativeElement.getBoundingClientRect().x;
         return `-${left}px`;
       default:
@@ -52,7 +52,7 @@ export class GhostTextGhostComponent {
       case 'EqualStartAndEnd':
         return '100%';
       case 'EqualStartAndSpeed':
-      case 'OneGlow':
+      case 'OneGhost':
         return `${this.document.body.clientWidth}px`;
       default:
         return;

@@ -4,24 +4,17 @@ import { NgModule, Injectable } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NgxGhostsModule, NgxGhostsConfiguration } from 'ngx-ghosts';
 
-export class StartAndEndAnimationConfig extends NgxGhostsConfiguration {
-  constructor() {
-    super();
-    this.animationStrategy = 'EqualStartAndEnd';
-  }
-}
+const startAndEndAnimationConfig: NgxGhostsConfiguration = {
+  animationStrategy: 'EqualStartAndEnd'
+};
 
-export class StartAndSpeedAnimationConfig extends NgxGhostsConfiguration {
-  constructor() {
-    super();
-    this.animationStrategy = 'EqualStartAndSpeed';
-  }
-}
+const startAndSpeedAnimationConfig: NgxGhostsConfiguration = {
+  animationStrategy: 'EqualStartAndSpeed'
+};
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, NgxGhostsModule],
-  providers: [{ provide: NgxGhostsConfiguration, useClass: StartAndSpeedAnimationConfig }],
+  imports: [BrowserModule, NgxGhostsModule.forRoot()],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -11,21 +11,12 @@
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "ngx-ghosts": [
-        "dist/ngx-ghosts"
-      ],
-      "ngx-ghosts/*": [
-        "dist/ngx-ghosts/*"
-      ]
+      "ngx-ghosts": ["dist/ngx-ghosts"],
+      "ngx-ghosts/*": ["dist/ngx-ghosts/*"]
     }
   }
 }

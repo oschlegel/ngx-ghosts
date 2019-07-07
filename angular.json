@@ -34,6 +34,7 @@
           },
           "configurations": {
             "production": {
+              "tsConfig": "projects/ngx-ghosts-app/tsconfig.app.prod.json",
               "fileReplacements": [
                 {
                   "replace": "projects/ngx-ghosts-app/src/environments/environment.ts",
@@ -154,6 +155,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ngx-ghosts-app"
 }

@@ -1,27 +1,80 @@
 # NgxGhosts
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+**Table of Contents:**
 
-## Development server
+- [NgxGhosts](#NgxGhosts)
+  - [Installation](#Installation)
+  - [Components](#Components)
+    - [Ghost Text Directive](#Ghost-Text-Directive)
+  - [Customization](#Customization)
+    - [Custom Ghosts Configuration](#Custom-Ghosts-Configuration)
+    - [Customzation by SCSS Variables](#Customzation-by-SCSS-Variables)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+First you need to install the npm module:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install ngx-ghosts or yarn install ngx-ghosts
+```
 
-## Build
+Import the `NgxGhostsModule` in your `AppModule` like this:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxGhostsModule } from 'ngx-ghosts';
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+    imports: [
+        BrowserModule,
+        NgxGhostsModule.forRoot()
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+Import the `NgxGhostsModule` in your shared, lazy, or other modules like this:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```javascript
+@NgModule({
+    exports: [
+        CommonModule,
+        NgxGhostsModule
+    ]
+})
+export class SharedModule { }
+```
 
-## Further help
+Now you are ready to add the first ghosts to your application.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Components
+
+### Ghost Text Directive
+With the `GhostTextDirective` you can add a ghost to a single line of text, or parts of a text line. In the example below the "description" requested from a server and a qhost is shown while the request is pending.
+
+```markup
+<div class="description-text">
+  <span *ghostText="descriptionLoading">{{description}}</span>
+</div>
+```
+
+Parameters:
+
+| Name       | Description                                      | Type             | Default |
+| ---------- | ------------------------------------------------ | ---------------- | ------- |
+| ghostText  | Toggle between ghost and content                 | boolean          | false   |
+| length     | Length of the ghost                              | number or "fill" | "fill"  |
+| ghostClass | Custom class which is added to the ghost element | string           |         |
+
+## Customization
+
+### Custom Ghosts Configuration
+
+TODO: Describe
+
+### Customzation by SCSS Variables
+
+TODO: Describe

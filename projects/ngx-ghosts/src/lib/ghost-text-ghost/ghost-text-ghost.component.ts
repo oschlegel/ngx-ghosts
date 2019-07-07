@@ -26,6 +26,8 @@ export class GhostTextGhostComponent {
     }
   }
 
+  @Input() ghostClass: string;
+
   textContent: string;
   fill = false;
   document: HTMLDocument;

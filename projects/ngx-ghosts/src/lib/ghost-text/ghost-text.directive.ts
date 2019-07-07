@@ -22,13 +22,20 @@ export class GhostTextDirective implements OnInit {
 
   @Input()
   set ghostTextLength(value: GhostTextLength) {
-    this._length = value;
+    this.ghostLength = value;
     this.updateGhostLength(value);
+  }
+
+  @Input()
+  set ghostTextGhostClass(value: string) {
+    this.ghostClass = value;
+    this.updateGhostClass(value);
   }
 
   private componentFactory: ComponentFactory<GhostTextGhostComponent>;
   private componentRef: ComponentRef<GhostTextGhostComponent>;
-  private _length: GhostTextLength = 'fill';
+  private ghostLength: GhostTextLength = 'fill';
+  private ghostClass: string;
 
   constructor(
     // tslint:disable-next-line:no-any
@@ -47,7 +54,8 @@ export class GhostTextDirective implements OnInit {
     this.viewContainer.clear();
     if (active) {
       this.componentRef = this.viewContainer.createComponent(this.componentFactory);
-      this.updateGhostLength(this._length);
+      this.updateGhostLength(this.ghostLength);
+      this.updateGhostClass(this.ghostClass);
     } else {
       this.viewContainer.createEmbeddedView(this.templateRef);
     }
@@ -56,6 +64,12 @@ export class GhostTextDirective implements OnInit {
   private updateGhostLength(length: GhostTextLength) {
     if (this.componentRef) {
       this.componentRef.instance.textLength = length;
+    }
+  }
+
+  private updateGhostClass(ghostClass: string) {
+    if (this.componentRef) {
+      this.componentRef.instance.ghostClass = ghostClass;
     }
   }
 }

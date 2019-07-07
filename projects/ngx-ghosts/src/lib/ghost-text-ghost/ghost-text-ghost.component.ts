@@ -42,7 +42,7 @@ export class GhostTextGhostComponent {
       case 'EqualStartAndSpeed':
         return '0px';
       case 'OneGhost':
-        const left = this.elementRef.nativeElement.getBoundingClientRect().x;
+        const left = this.elementRef.nativeElement.getBoundingClientRect().left;
         return `-${left}px`;
       default:
         return;

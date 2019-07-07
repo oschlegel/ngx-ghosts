@@ -7,11 +7,11 @@ $ghost-font-bottom-spacing: 0.2em;
 
 @keyframes ghost-glow-keyframe {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 
   100% {
-    transform: translateX(150%);
+    transform: translate3d(150%, 0, 0);
   }
 }
 
@@ -19,7 +19,7 @@ $ghost-font-bottom-spacing: 0.2em;
   $bem-block: &;
   position: relative;
   display: inline-block;
-  overflow-x: hidden;
+  overflow: hidden;
   vertical-align: top; // To remove extra space created by overflow-x: hidden;
   max-width: 100%;
   color: rgba(0, 0, 0, 0);
@@ -42,9 +42,9 @@ $ghost-font-bottom-spacing: 0.2em;
     width: 100%;
     background: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.001) 0%,
+      opacify($ghost-base-color, 0.001) 0%,
       opacify($ghost-glow-color, 0.05) 25%,
-      rgba(0, 0, 0, 0.001) 50%
+      opacify($ghost-base-color, 0.001) 50%
     );
     animation-duration: $ghost-glow-animation-duration;
     animation-name: ghost-glow-keyframe;

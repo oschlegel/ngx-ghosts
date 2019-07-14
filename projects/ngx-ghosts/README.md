@@ -1,24 +1,115 @@
 # NgxGhosts
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+**Table of Contents:**
 
-## Code scaffolding
+- [NgxGhosts](#NgxGhosts)
+  - [Installation](#Installation)
+  - [Components](#Components)
+    - [Ghost Text Directive](#Ghost-Text-Directive)
+  - [Customization](#Customization)
+    - [Custom Configuration](#Custom-Configuration)
+    - [Customization by SCSS Variables](#Customization-by-SCSS-Variables)
 
-Run `ng generate component component-name --project ngx-ghosts` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-ghosts`.
-> Note: Don't forget to add `--project ngx-ghosts` or else it will be added to the default project in your `angular.json` file. 
+## Installation
 
-## Build
+First you need to install the npm module:
 
-Run `ng build ngx-ghosts` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install ngx-ghosts or yarn install ngx-ghosts
+```
 
-## Publishing
+Import the `NgxGhostsModule` in your `AppModule` like this:
 
-After building your library with `ng build ngx-ghosts`, go to the dist folder `cd dist/ngx-ghosts` and run `npm publish`.
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxGhostsModule } from 'ngx-ghosts';
 
-## Running unit tests
 
-Run `ng test ngx-ghosts` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+    imports: [
+        BrowserModule,
+        NgxGhostsModule.forRoot()
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Further help
+Import the `NgxGhostsModule` in your shared, lazy, or other modules like this:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```javascript
+@NgModule({
+    exports: [
+        CommonModule,
+        NgxGhostsModule
+    ]
+})
+export class SharedModule { }
+```
+
+Now you are ready to add the first ghosts to your application.
+
+## Components
+
+### Ghost Text Directive
+
+With the `GhostTextDirective` you can add a ghost to a single line of text, or parts of a text line. In the example below the "description" requested from a server and a qhost is shown while the request is pending.
+
+```markup
+<div class="description-text">
+  <span *ghostText="descriptionLoading">{{description}}</span>
+</div>
+```
+
+Parameters:
+
+| Name       | Description                                      | Type             | Default |
+| ---------- | ------------------------------------------------ | ---------------- | ------- |
+| ghostText  | Toggle between ghost and content                 | boolean          | false   |
+| length     | Length of the ghost                              | number or "fill" | "fill"  |
+| ghostClass | Custom class which is added to the ghost element | string           |         |
+
+## Customization
+
+### Custom Configuration
+
+One way to customize ngx-ghosts is by providing a custom configuration like this:
+
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { NgxGhostsModule } from 'ngx-ghosts';
+
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        NgxGhostsModule.forRoot({
+          animationStrategy: 'EqualStartAndEnd'
+        })
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+The configuration supports following properties:
+
+| Name              | Description                                                                                                                                                                                                                                                                                                                                                                                                        | Type                   | Default    |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
+| animationStrategy | Decide how the animation of your ghosts should behave. You can choose from the following variants: <ul><li>EqualStartAndEnd - All animations start and end at the same time, speed depends on the ghosts length</li><li>EqualStartAndSpeed - All animations start at the same time and have the same speed</li><li>OneGhost - This looks like there would be only one ghost moving across the whole page</li></ul> | GhostAnimationStrategy | "OneGhost" |
+
+### Customization by SCSS Variables
+
+There are a whole range of variables that are used to style the ghosts, any variable can be overwritten and customized.
+
+| Name                           | Description                              | Default                                                                                                                                        |
+| ------------------------------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| $ghost-base-color              | Background color of ghosts               | #e3e4e4                                                                                                                                        |
+| $ghost-glow-color              | Color of the ghost's "glow"              | #f5f5f5                                                                                                                                        |
+| $ghost-glow-animation-duration | Duration of the ghost animation          | 2000ms                                                                                                                                         |
+| $ghost-glow-animation-function | Animation funtion of the ghost animation | linear                                                                                                                                         |
+| $ghost-glow                    | Background of ghost's "glow" element     | `linear-gradient(to right, opacify($ghost-base-color, 0.001) 0%, opacify($ghost-glow-color, 0.05) 25%, opacify($ghost-base-color, 0.001) 50%)` |
+| $ghost-font-top-spacing        | Represents the top gap of the font       | 0.15em                                                                                                                                         |
+| $ghost-font-bottom-spacing     | Represents the bottom gap of the font    | 0.2em                                                                                                                                          |

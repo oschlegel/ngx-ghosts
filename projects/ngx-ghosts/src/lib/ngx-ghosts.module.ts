@@ -4,6 +4,10 @@ import { GhostTextGhostComponent } from './ghost-text-ghost/ghost-text-ghost.com
 import { NgxGhostsConfiguration } from './ngx-ghosts-configuration';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 
+export function getConfigProvider(config?: NgxGhostsConfiguration) {
+  return !!config ? { provide: NgxGhostsConfiguration, useValue: config } : NgxGhostsConfiguration;
+}
+
 @NgModule({
   declarations: [GhostTextDirective, GhostTextGhostComponent],
   exports: [GhostTextDirective],
@@ -11,10 +15,9 @@ import { ModuleWithProviders } from '@angular/compiler/src/core';
 })
 export class NgxGhostsModule {
   public static forRoot(config?: NgxGhostsConfiguration): ModuleWithProviders {
-    const configProvider = !!config ? { provide: NgxGhostsConfiguration, useValue: config } : NgxGhostsConfiguration;
     return {
       ngModule: NgxGhostsModule,
-      providers: [configProvider]
+      providers: [getConfigProvider(config)]
     };
   }
 }

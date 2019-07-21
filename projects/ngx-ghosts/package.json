@@ -1,6 +1,14 @@
 {
   "name": "ngx-ghosts",
   "version": "0.1.0",
+  "license": "MIT",
+  "description": "Library to create skeleton loading experiences with angular",
+  "homepage": "https://github.com/oschlegel/ngx-ghosts",
+  "bugs": "https://github.com/oschlegel/ngx-ghosts/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oschlegel/ngx-ghosts.git"
+  },
   "peerDependencies": {
     "@angular/common": "^8.0.1",
     "@angular/core": "^8.0.1"

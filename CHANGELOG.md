@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Unpublished
+
+- **Added** License and github link to package.json
+- **Added** Live demo
+
 ## 0.1.0
 
 - **Added** NgxGhostsModule

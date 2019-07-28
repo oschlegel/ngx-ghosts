@@ -10,6 +10,8 @@
     - [Custom Configuration](#Custom-Configuration)
     - [Customization by SCSS Variables](#Customization-by-SCSS-Variables)
 
+[Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts)
+
 ## Installation
 
 First you need to install the npm module:

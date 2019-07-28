@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './product';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,61 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  active = true;
-  length = 15;
-
-  updateLength(value: string) {
-    if (isNaN(parseInt(value))) {
-      return;
+  loading = true;
+  products: Product[] = [
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
+    },
+    {
+      name: 'Firetruck',
+      description: 'Model made of high-quality metal with plastic parts. Scale 1:64. Length approx. 7 cm',
+      prize: 24
     }
-    this.length = parseInt(value);
+  ];
+
+  toggleLoading() {
+    this.loading = !this.loading;
   }
 }

@@ -3,5 +3,5 @@ import { GhostAnimationStrategy } from './models';
 
 @Injectable()
 export class NgxGhostsConfiguration {
-  animationStrategy: GhostAnimationStrategy = 'OneGhost';
+  animationStrategy: GhostAnimationStrategy = 'OneAnimation';
 }

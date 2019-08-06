@@ -1,9 +1,11 @@
 # CHANGELOG
 
-## Unpublished
+## 0.1.1
 
 - **Added** License and github link to package.json
 - **Added** Live demo
+- **Added** Animation stategy none
+- **Changed** Animation stategy "OneGhost" to "OneAnimation"
 
 ## 0.1.0
 

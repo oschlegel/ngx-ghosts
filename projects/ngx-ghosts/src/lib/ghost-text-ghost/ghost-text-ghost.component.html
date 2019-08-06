@@ -1,4 +1,6 @@
 <span class="ghost ghost--text {{ ghostClass }}" [class.ghost--fill]="fill">
   {{ textContent }}
-  <span class="ghost__glow" [style.left]="glowLeft" [style.width]="glowWidth">&nbsp;</span>
+  <span class="ghost__glow" [class.ghost__glow--hidden]="glowHidden" [style.left]="glowLeft" [style.width]="glowWidth"
+    >&nbsp;</span
+  >
 </span>

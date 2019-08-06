@@ -51,6 +51,10 @@ $ghost-font-bottom-spacing: 0.2em;
     animation-name: ghost-glow-keyframe;
     animation-iteration-count: infinite;
     animation-timing-function: $ghost-glow-animation-function;
+
+    &--hidden {
+      display: none;
+    }
   }
 
   &--text {

@@ -33,7 +33,7 @@ export class GhostTextGhostComponent {
       case 'EqualStartAndEnd':
       case 'EqualStartAndSpeed':
         return '0px';
-      case 'OneGhost':
+      case 'OneAnimation':
         const left = this.elementRef.nativeElement.getBoundingClientRect().left;
         return `-${left}px`;
       default:
@@ -46,11 +46,15 @@ export class GhostTextGhostComponent {
       case 'EqualStartAndEnd':
         return '100%';
       case 'EqualStartAndSpeed':
-      case 'OneGhost':
+      case 'OneAnimation':
         return `${this.document.body.clientWidth}px`;
       default:
         return;
     }
+  }
+
+  get glowHidden() {
+    return this.config.animationStrategy === 'None';
   }
 
   @Input() ghostClass: string;

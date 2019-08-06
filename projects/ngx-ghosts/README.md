@@ -2,13 +2,13 @@
 
 **Table of Contents:**
 
-- [NgxGhosts](#NgxGhosts)
-  - [Installation](#Installation)
-  - [Components](#Components)
-    - [Ghost Text Directive](#Ghost-Text-Directive)
-  - [Customization](#Customization)
-    - [Custom Configuration](#Custom-Configuration)
-    - [Customization by SCSS Variables](#Customization-by-SCSS-Variables)
+- [NgxGhosts](#ngxghosts)
+  - [Installation](#installation)
+  - [Components](#components)
+    - [Ghost Text Directive](#ghost-text-directive)
+  - [Customization](#customization)
+    - [Custom Configuration](#custom-configuration)
+    - [Customization by SCSS Variables](#customization-by-scss-variables)
 
 [Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts-demo)
 
@@ -98,9 +98,9 @@ export class AppModule { }
 
 The configuration supports following properties:
 
-| Name              | Description                                                                                                                                                                                                                                                                                                                                                                                                        | Type                   | Default    |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
-| animationStrategy | Decide how the animation of your ghosts should behave. You can choose from the following variants: <ul><li>EqualStartAndEnd - All animations start and end at the same time, speed depends on the ghosts length</li><li>EqualStartAndSpeed - All animations start at the same time and have the same speed</li><li>OneGhost - This looks like there would be only one ghost moving across the whole page</li></ul> | GhostAnimationStrategy | "OneGhost" |
+| Name              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Type                   | Default        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- | -------------- |
+| animationStrategy | Decide how the animation of your ghosts should behave. You can choose from the following variants: <ul><li>EqualStartAndEnd - All animations start and end at the same time, speed depends on the ghosts length</li><li>EqualStartAndSpeed - All animations start at the same time and have the same speed</li><li>OneAnimation - This looks like there would be only one ghost moving across the whole page</li><li>None - No animation is shown at all</li></ul> | GhostAnimationStrategy | "OneAnimation" |
 
 ### Customization by SCSS Variables
 

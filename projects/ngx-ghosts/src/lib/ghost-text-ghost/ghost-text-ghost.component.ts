@@ -10,9 +10,6 @@ import { DOCUMENT } from '@angular/common';
   encapsulation: ViewEncapsulation.None
 })
 export class GhostTextGhostComponent {
-  @HostListener('window:resize', [])
-  onWindowResize() {}
-
   @Input()
   set textLength(length: GhostTextLength) {
     if (length === 'fill') {
@@ -26,12 +23,7 @@ export class GhostTextGhostComponent {
     }
   }
 
-  @Input() ghostClass: string;
-
-  textContent: string;
-  fill = false;
-  document: HTMLDocument;
-
+  // tslint:disable-next-line: no-any
   constructor(private config: NgxGhostsConfiguration, private elementRef: ElementRef, @Inject(DOCUMENT) document: any) {
     this.document = document;
   }
@@ -60,4 +52,13 @@ export class GhostTextGhostComponent {
         return;
     }
   }
+
+  @Input() ghostClass: string;
+
+  textContent: string;
+  fill = false;
+  document: HTMLDocument;
+
+  @HostListener('window:resize', [])
+  onWindowResize() {}
 }

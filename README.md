@@ -2,15 +2,15 @@
 
 **Table of Contents:**
 
-- [NgxGhosts](#NgxGhosts)
-  - [Installation](#Installation)
-  - [Components](#Components)
-    - [Ghost Text Directive](#Ghost-Text-Directive)
-  - [Customization](#Customization)
-    - [Custom Configuration](#Custom-Configuration)
-    - [Customization by SCSS Variables](#Customization-by-SCSS-Variables)
+- [NgxGhosts](#ngxghosts)
+  - [Installation](#installation)
+  - [Components](#components)
+    - [Ghost Text Directive](#ghost-text-directive)
+  - [Customization](#customization)
+    - [Custom Configuration](#custom-configuration)
+    - [Customization by SCSS Variables](#customization-by-scss-variables)
 
-[Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts)
+[Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts-demo)
 
 ## Installation
 

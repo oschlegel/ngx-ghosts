@@ -10,7 +10,7 @@
     - [Custom Configuration](#Custom-Configuration)
     - [Customization by SCSS Variables](#Customization-by-SCSS-Variables)
 
-[Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts)
+[Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts-demo)
 
 ## Installation
 

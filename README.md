@@ -8,7 +8,7 @@
     - [Ghost Text Directive](#ghost-text-directive)
   - [Customization](#customization)
     - [Custom Configuration](#custom-configuration)
-    - [Customization by SCSS Variables](#customization-by-scss-variables)
+    - [Custom theme](#custom-theme)
 
 [Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts-demo)
 
@@ -48,6 +48,26 @@ Import the `NgxGhostsModule` in your shared, lazy, or other modules like this:
     ]
 })
 export class SharedModule { }
+```
+
+Load the ngx-ghosts theme by adding it to the angular.json like this:
+
+```json
+...
+"build": {
+  "options": {
+    "styles": [
+        "./node_modules/ngx-ghosts/theme.scss",
+        "projects/ngx-ghosts-app/src/styles.scss"
+      ]
+  }
+}
+```
+
+Or by importing the theme into your global styles like this:
+
+```SASS
+@import '../../../node_modules/ngx-ghosts/theme.scss';
 ```
 
 Now you are ready to add the first ghosts to your application.
@@ -102,16 +122,37 @@ The configuration supports following properties:
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- | -------------- |
 | animationStrategy | Decide how the animation of your ghosts should behave. You can choose from the following variants: <ul><li>EqualStartAndEnd - All animations start and end at the same time, speed depends on the ghosts length</li><li>EqualStartAndSpeed - All animations start at the same time and have the same speed</li><li>OneAnimation - This looks like there would be only one ghost moving across the whole page</li><li>None - No animation is shown at all</li></ul> | GhostAnimationStrategy | "OneAnimation" |
 
-### Customization by SCSS Variables
+### Custom theme
 
-There are a whole range of variables that are used to style the ghosts, any variable can be overwritten and customized.
+There are a whole range of variables that are used to style the ghosts, any variable can be overwritten by providing a custom theme. The Following properties are supported for the theme:
 
-| Name                           | Description                              | Default                                                                                                                                        |
-| ------------------------------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| $ghost-base-color              | Background color of ghosts               | #e3e4e4                                                                                                                                        |
-| $ghost-glow-color              | Color of the ghost's "glow"              | #f5f5f5                                                                                                                                        |
-| $ghost-glow-animation-duration | Duration of the ghost animation          | 2000ms                                                                                                                                         |
-| $ghost-glow-animation-function | Animation funtion of the ghost animation | linear                                                                                                                                         |
-| $ghost-glow                    | Background of ghost's "glow" element     | `linear-gradient(to right, opacify($ghost-base-color, 0.001) 0%, opacify($ghost-glow-color, 0.05) 25%, opacify($ghost-base-color, 0.001) 50%)` |
-| $ghost-font-top-spacing        | Represents the top gap of the font       | 0.15em                                                                                                                                         |
-| $ghost-font-bottom-spacing     | Represents the bottom gap of the font    | 0.2em                                                                                                                                          |
+| Name                          | Description                              | Default                                                                                                                                                         |
+| ----------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ghost-base-color              | Background color of ghosts               | #e3e4e4                                                                                                                                                         |
+| ghost-glow-color              | Color of the ghost's "glow"              | #f5f5f5                                                                                                                                                         |
+| ghost-glow-animation-duration | Duration of the ghost animation          | 2000ms                                                                                                                                                          |
+| ghost-glow-animation-function | Animation funtion of the ghost animation | linear                                                                                                                                                          |
+| ghost-glow                    | Background of ghost's "glow" element     | `linear-gradient(to right, transparentize(ghost-base-color, 0.999) 0%, transparentize(ghost-glow-color, 0.3) 25%, transparentize(ghost-base-color, 0.999) 50%)` |
+| ghost-font-top-spacing        | Represents the top gap of the font       | 0.15em                                                                                                                                                          |
+| ghost-font-bottom-spacing     | Represents the bottom gap of the font    | 0.2em                                                                                                                                                           |
+
+A custom theme can be created like this:
+
+```SASS
+@import '../../../node_modules/ngx-ghosts/theme.scss';
+
+.dark-theme {
+  @include ngx-ghosts-theme(
+    (
+      ghost-base-color: #000,
+      ghost-glow:
+        linear-gradient(
+          to right,
+          transparentize(#000, 0.999) 0%,
+          transparentize(#313639, 0.3) 25%,
+          transparentize(#000, 0.999) 50%
+        )
+    )
+  );
+}
+```

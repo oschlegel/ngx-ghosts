@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.2.0
+
+- **Added** New theming
+
 ## 0.1.1
 
 - **Added** License and github link to package.json

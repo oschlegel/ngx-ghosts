@@ -1,28 +1,4 @@
-$ghost-base-color: #e3e4e4;
-$ghost-glow-color: #f5f5f5;
-$ghost-glow-animation-duration: 2000ms;
-$ghost-glow-animation-function: linear;
-$ghost-glow: linear-gradient(
-  to right,
-  opacify($ghost-base-color, 0.001) 0%,
-  opacify($ghost-glow-color, 0.05) 25%,
-  opacify($ghost-base-color, 0.001) 50%
-);
-$ghost-font-top-spacing: 0.15em;
-$ghost-font-bottom-spacing: 0.2em;
-
-@keyframes ghost-glow-keyframe {
-  0% {
-    transform: translate3d(-50%, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(150%, 0, 0);
-  }
-}
-
 .ghost {
-  $bem-block: &;
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -33,11 +9,14 @@ $ghost-font-bottom-spacing: 0.2em;
   &::before {
     content: '&nbsp;';
     position: absolute;
-    top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
-    background-color: $ghost-base-color;
+  }
+
+  // Styles are conflicting with theme styles due to order of loading
+  &:not(&--text)::before {
+    top: 0;
+    bottom: 0;
   }
 
   &__glow {
@@ -46,26 +25,10 @@ $ghost-font-bottom-spacing: 0.2em;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: $ghost-glow;
-    animation-duration: $ghost-glow-animation-duration;
-    animation-name: ghost-glow-keyframe;
     animation-iteration-count: infinite;
-    animation-timing-function: $ghost-glow-animation-function;
 
     &--hidden {
       display: none;
-    }
-  }
-
-  &--text {
-    &::before {
-      top: $ghost-font-top-spacing;
-      bottom: $ghost-font-bottom-spacing;
-    }
-
-    #{$bem-block}__glow {
-      top: $ghost-font-top-spacing;
-      bottom: $ghost-font-bottom-spacing;
     }
   }
 

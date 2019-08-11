@@ -1,0 +1,16 @@
+@import '../../../dist/ngx-ghosts/theme.scss';
+
+.mat-primary {
+  @include ngx-ghosts-theme(
+    (
+      ghost-base-color: rgba(0, 0, 0, 0.26),
+      ghost-glow:
+        linear-gradient(
+          to right,
+          transparentize(#000, 0.999) 0%,
+          transparentize(#3f51b5, 0.3) 25%,
+          transparentize(#000, 0.999) 50%
+        )
+    )
+  );
+}

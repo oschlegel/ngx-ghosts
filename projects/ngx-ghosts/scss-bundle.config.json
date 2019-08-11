@@ -1,0 +1,4 @@
+{
+  "entry": "./projects/ngx-ghosts/src/theme.scss",
+  "dest": "./dist/ngx-ghosts/theme.scss"
+}

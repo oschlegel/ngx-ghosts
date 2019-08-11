@@ -15,7 +15,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ngx-ghosts:build": "ng build ngx-ghosts && npm run ngx-ghosts:build:scss-bundle && npm run ngx-ghosts:build:readme",
+    "ngx-ghosts:build:scss-bundle": "scss-bundle -c projects/ngx-ghosts/scss-bundle.config.json",
+    "ngx-ghosts:build:readme": "cp README.md dist/ngx-ghosts"
   },
   "private": true,
   "dependencies": {
@@ -54,6 +57,7 @@
     "prettier": "^1.18.2",
     "protractor": "~5.4.0",
     "rxjs-tslint-rules": "^4.24.2",
+    "scss-bundle": "^2.5.1",
     "ts-node": "~7.0.0",
     "tsickle": "^0.35.0",
     "tslint": "~5.15.0",

@@ -10,9 +10,9 @@ import {
   Inject,
   Injector
 } from '@angular/core';
-import { GhostTextGhostComponent } from '../ghost-text-ghost/ghost-text-ghost.component';
 import { GhostTextLength } from '../models';
 import { DOCUMENT } from '@angular/common';
+import { GhostComponent } from '../ghost/ghost.component';
 
 @Directive({
   selector: '[ghostText]'
@@ -39,8 +39,8 @@ export class GhostTextDirective implements OnInit {
     this.updateGhostClass(value);
   }
 
-  private componentFactory: ComponentFactory<GhostTextGhostComponent>;
-  private componentRef: ComponentRef<GhostTextGhostComponent>;
+  private componentFactory: ComponentFactory<GhostComponent>;
+  private componentRef: ComponentRef<GhostComponent>;
   private ghostActive = false;
   private ghostLength: GhostTextLength = 'fill';
   private ghostClass: string;
@@ -55,12 +55,12 @@ export class GhostTextDirective implements OnInit {
     // tslint:disable-next-line: no-any
     @Inject(DOCUMENT) document: any
   ) {
-    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostTextGhostComponent);
+    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostComponent);
     this.document = document;
   }
 
   ngOnInit(): void {
-    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostTextGhostComponent);
+    this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostComponent);
   }
 
   private toggleGhost(active: boolean) {

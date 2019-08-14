@@ -1,4 +1,4 @@
-@import './lib/ghost-text-ghost/ghost-text-ghost.component.theme.scss';
+@import './lib/ghost/ghost.component.theme.scss';
 
 $ngx-ghosts-default-theme: (
   ghost-base-color: #e3e4e4,
@@ -11,7 +11,7 @@ $ngx-ghosts-default-theme: (
 
 @mixin ngx-ghosts-theme($theme) {
   $merged-theme: map-merge($ngx-ghosts-default-theme, $theme);
-  @include ngx-ghosts-ghost-text-ghost-theme($merged-theme);
+  @include ngx-ghosts-ghost-theme($merged-theme);
 }
 
 @include ngx-ghosts-theme(());

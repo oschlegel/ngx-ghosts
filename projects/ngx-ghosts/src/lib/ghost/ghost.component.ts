@@ -11,13 +11,14 @@ import { NgxGhostsConfiguration } from '../ngx-ghosts-configuration';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'ghost-text-ghost',
-  templateUrl: './ghost-text-ghost.component.html',
-  styleUrls: ['./ghost-text-ghost.component.scss'],
+  // tslint:disable-next-line: component-selector
+  selector: 'ghost',
+  templateUrl: './ghost.component.html',
+  styleUrls: ['./ghost.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GhostTextGhostComponent {
+export class GhostComponent {
   // tslint:disable-next-line: no-any
   constructor(private config: NgxGhostsConfiguration, private elementRef: ElementRef, @Inject(DOCUMENT) document: any) {
     this.document = document;

@@ -30,7 +30,7 @@
       </mat-card-header>
       <mat-card-content>
         <div class="product-list_description">
-          <ng-container *ghostText="loading">{{ product.description }}</ng-container>
+          <ng-container *ghostTextBlock="loading; lines: ['fill', 44]">{{ product.description }}</ng-container>
         </div>
       </mat-card-content>
       <mat-card-actions>

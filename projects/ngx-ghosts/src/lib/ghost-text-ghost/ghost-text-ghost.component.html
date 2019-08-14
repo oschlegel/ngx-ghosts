@@ -1,5 +1,5 @@
-<span class="ghost ghost--text {{ ghostClass }}" [class.ghost--fill]="fill">
-  {{ textContent }}
+<span class="ghost ghost--text {{ ghostClass }}" [class.ghost--fill]="fillHorizontal">
+  <ng-content></ng-content>
   <span class="ghost__glow" [class.ghost__glow--hidden]="glowHidden" [style.left]="glowLeft" [style.width]="glowWidth"
     >&nbsp;</span
   >

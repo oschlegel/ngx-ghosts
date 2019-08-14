@@ -1,5 +1,12 @@
-import { Component, ViewEncapsulation, Input, Inject, ElementRef, HostListener } from '@angular/core';
-import { GhostTextLength } from '../models';
+import {
+  Component,
+  ViewEncapsulation,
+  Input,
+  Inject,
+  ElementRef,
+  HostListener,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { NgxGhostsConfiguration } from '../ngx-ghosts-configuration';
 import { DOCUMENT } from '@angular/common';
 
@@ -7,22 +14,10 @@ import { DOCUMENT } from '@angular/common';
   selector: 'ghost-text-ghost',
   templateUrl: './ghost-text-ghost.component.html',
   styleUrls: ['./ghost-text-ghost.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GhostTextGhostComponent {
-  @Input()
-  set textLength(length: GhostTextLength) {
-    if (length === 'fill') {
-      this.textContent = '0';
-      this.fill = true;
-    } else {
-      this.textContent = Array(length)
-        .fill('0')
-        .join('');
-      this.fill = false;
-    }
-  }
-
   // tslint:disable-next-line: no-any
   constructor(private config: NgxGhostsConfiguration, private elementRef: ElementRef, @Inject(DOCUMENT) document: any) {
     this.document = document;
@@ -57,11 +52,10 @@ export class GhostTextGhostComponent {
     return this.config.animationStrategy === 'None';
   }
 
+  @Input() fillHorizontal = false;
   @Input() ghostClass: string;
 
-  textContent: string;
-  fill = false;
-  document: HTMLDocument;
+  private document: HTMLDocument;
 
   @HostListener('window:resize', [])
   onWindowResize() {}

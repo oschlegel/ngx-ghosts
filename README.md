@@ -126,15 +126,14 @@ The configuration supports following properties:
 
 There are a whole range of variables that are used to style the ghosts, any variable can be overwritten by providing a custom theme. The Following properties are supported for the theme:
 
-| Name                          | Description                              | Default                                                                                                                                                         |
-| ----------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ghost-base-color              | Background color of ghosts               | #e3e4e4                                                                                                                                                         |
-| ghost-glow-color              | Color of the ghost's "glow"              | #f5f5f5                                                                                                                                                         |
-| ghost-glow-animation-duration | Duration of the ghost animation          | 2000ms                                                                                                                                                          |
-| ghost-glow-animation-function | Animation funtion of the ghost animation | linear                                                                                                                                                          |
-| ghost-glow                    | Background of ghost's "glow" element     | `linear-gradient(to right, transparentize(ghost-base-color, 0.999) 0%, transparentize(ghost-glow-color, 0.3) 25%, transparentize(ghost-base-color, 0.999) 50%)` |
-| ghost-font-top-spacing        | Represents the top gap of the font       | 0.15em                                                                                                                                                          |
-| ghost-font-bottom-spacing     | Represents the bottom gap of the font    | 0.2em                                                                                                                                                           |
+| Name                          | Description                              | Default |
+| ----------------------------- | ---------------------------------------- | ------- |
+| ghost-base-color              | Background color of ghosts               | #e3e4e4 |
+| ghost-glow-color              | Color of the ghost's "glow"              | #f5f5f5 |
+| ghost-glow-animation-duration | Duration of the ghost animation          | 2000ms  |
+| ghost-glow-animation-function | Animation funtion of the ghost animation | linear  |
+| ghost-font-top-spacing        | Represents the top gap of the font       | 0.15em  |
+| ghost-font-bottom-spacing     | Represents the bottom gap of the font    | 0.2em   |
 
 A custom theme can be created like this:
 
@@ -145,13 +144,7 @@ A custom theme can be created like this:
   @include ngx-ghosts-theme(
     (
       ghost-base-color: #000,
-      ghost-glow:
-        linear-gradient(
-          to right,
-          transparentize(#000, 0.999) 0%,
-          transparentize(#313639, 0.3) 25%,
-          transparentize(#000, 0.999) 50%
-        )
+      ghost-glow-color: #313639
     )
   );
 }

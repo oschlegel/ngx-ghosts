@@ -26,6 +26,7 @@
     left: 0;
     width: 100%;
     animation-iteration-count: infinite;
+    animation-name: ghost-glow;
 
     &--hidden {
       display: none;
@@ -34,5 +35,15 @@
 
   &--fill {
     width: 100%;
+  }
+}
+
+@keyframes ghost-glow {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(150%, 0, 0);
   }
 }

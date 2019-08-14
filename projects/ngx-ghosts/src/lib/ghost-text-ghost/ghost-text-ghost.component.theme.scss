@@ -7,11 +7,14 @@
     }
 
     &__glow {
-      background: map-get($theme, ghost-glow);
+      background: linear-gradient(
+        to right,
+        transparentize(map-get($theme, ghost-base-color), 0.999) 0%,
+        transparentize(map-get($theme, ghost-glow-color), 0.3) 25%,
+        transparentize(map-get($theme, ghost-base-color), 0.999) 50%
+      );
       animation-duration: map-get($theme, ghost-glow-animation-duration);
-      animation-name: map-get($theme, ghost-glow-keyframe);
       animation-timing-function: map-get($theme, ghost-glow-animation-function);
-      animation-name: map-get($theme, ghost-glow-keyframe);
     }
 
     &--text {

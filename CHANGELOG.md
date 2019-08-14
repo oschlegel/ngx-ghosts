@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.2.1
+
+- **Removed** Scss varibale ghost-glow to simplify theming
+- **Removed** Scss varibale ghost-glow-keyframe to simplify theming
+
 ## 0.2.0
 
 - **Added** New theming

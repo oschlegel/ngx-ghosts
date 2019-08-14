@@ -6,6 +6,8 @@
   - [Installation](#installation)
   - [Components](#components)
     - [Ghost Text Directive](#ghost-text-directive)
+    - [Ghost Text Block Directive](#ghost-text-block-directive)
+    - [Ghost](#ghost)
   - [Customization](#customization)
     - [Custom Configuration](#custom-configuration)
     - [Custom theme](#custom-theme)
@@ -76,21 +78,54 @@ Now you are ready to add the first ghosts to your application.
 
 ### Ghost Text Directive
 
-With the `GhostTextDirective` you can add a ghost to a single line of text, or parts of a text line. In the example below the "description" requested from a server and a qhost is shown while the request is pending.
+You can add a ghost to a single line of text, or parts of a text line with the `GhostText` directive. In the example below the "title" requested from a server and a server is shown while the request is pending.
 
 ```markup
-<div class="description-text">
-  <span *ghostText="descriptionLoading">{{description}}</span>
+<div class="title-text">
+  <span *ghostText="loading; length: 23">{{title}}</span>
 </div>
 ```
 
 Parameters:
 
-| Name       | Description                                      | Type             | Default |
-| ---------- | ------------------------------------------------ | ---------------- | ------- |
-| ghostText  | Toggle between ghost and content                 | boolean          | false   |
-| length     | Length of the ghost                              | number or "fill" | "fill"  |
-| ghostClass | Custom class which is added to the ghost element | string           |         |
+| Name      | Description                                      | Type             | Default |
+| --------- | ------------------------------------------------ | ---------------- | ------- |
+| ghostText | Toggle between ghost and content                 | boolean          | false   |
+| length    | Length of the ghost                              | number or "fill" | "fill"  |
+| class     | Custom class which is added to the ghost element | string           |         |
+
+### Ghost Text Block Directive
+
+You can add a ghost to a multiline text with the `GhostTextBlock` directive.
+
+```markup
+<div class="description-text">
+  <span *ghostTextBlock="loading; lines: [34, 50]">{{description}}</span>
+</div>
+```
+
+Parameters:
+
+| Name           | Description                                                                                      | Type                                | Default |
+| -------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------- | ------- |
+| ghostTextBlock | Toggle between ghost and content                                                                 | boolean                             | false   |
+| lines          | Amount and length of lines. When only amount of lines is specified all lines will expand to fill | number or array of number or "fill" | []      |
+| class          | Custom class which is added to the ghost element                                                 | string                              |         |
+
+### Ghost
+
+For special use cases where the other directives and components don't work you can us the basic `Ghost` component.
+
+```markup
+<ghost>My special content</ghost>
+```
+
+Parameters:
+
+| Name           | Description                                      | Type    | Default |
+| -------------- | ------------------------------------------------ | ------- | ------- |
+| fillHorizontal | Use available horizontal space                   | boolean | false   |
+| ghostClass     | Custom class which is added to the ghost element | string  |         |
 
 ## Customization
 

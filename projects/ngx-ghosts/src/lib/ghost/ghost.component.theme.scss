@@ -1,32 +1,54 @@
 @mixin ngx-ghosts-ghost-theme($theme) {
+  $ghost-base-color: map-get($theme, ghost-base-color);
+  $ghost-glow-color: map-get($theme, ghost-glow-color);
+  $ghost-glow-intensity: map-get($theme, ghost-glow-intensity);
+  $ghost-glow-width: map-get($theme, ghost-glow-width);
+  $ghost-glow-animation-duration: map-get($theme, ghost-glow-animation-duration);
+  $ghost-glow-animation-function: map-get($theme, ghost-glow-animation-function);
+  $ghost-font-top-spacing: map-get($theme, ghost-font-top-spacing);
+  $ghost-font-bottom-spacing: map-get($theme, ghost-font-bottom-spacing);
+
+  $ghost-glow-animation-id: unique-id();
+
   .ghost {
     $bem-block: &;
 
     &::before {
-      background-color: map-get($theme, ghost-base-color);
+      background-color: $ghost-base-color;
     }
 
     &__glow {
       background: linear-gradient(
         to right,
-        transparentize(map-get($theme, ghost-base-color), 0.999) 0%,
-        transparentize(map-get($theme, ghost-glow-color), 0.3) 25%,
-        transparentize(map-get($theme, ghost-base-color), 0.999) 50%
+        transparentize($ghost-base-color, 0.999) 0%,
+        transparentize($ghost-glow-color, $ghost-glow-intensity) ($ghost-glow-width / 2),
+        transparentize($ghost-base-color, 0.999) $ghost-glow-width
       );
-      animation-duration: map-get($theme, ghost-glow-animation-duration);
-      animation-timing-function: map-get($theme, ghost-glow-animation-function);
+      animation-duration: $ghost-glow-animation-duration;
+      animation-timing-function: $ghost-glow-animation-function;
+      animation-name: ghost-glow-#{$ghost-glow-animation-id};
     }
 
     &--text {
       &::before {
-        top: map-get($theme, ghost-font-top-spacing);
-        bottom: map-get($theme, ghost-font-bottom-spacing);
+        top: $ghost-font-top-spacing;
+        bottom: $ghost-font-bottom-spacing;
       }
 
       #{$bem-block}__glow {
-        top: map-get($theme, ghost-font-top-spacing);
-        bottom: map-get($theme, ghost-font-bottom-spacing);
+        top: $ghost-font-top-spacing;
+        bottom: $ghost-font-bottom-spacing;
       }
+    }
+  }
+
+  @keyframes ghost-glow-#{$ghost-glow-animation-id} {
+    0% {
+      transform: translate3d(-($ghost-glow-width), 0, 0);
+    }
+
+    100% {
+      transform: translate3d(100%, 0, 0);
     }
   }
 }

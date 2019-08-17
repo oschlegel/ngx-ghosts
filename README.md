@@ -164,7 +164,9 @@ There are a whole range of variables that are used to style the ghosts, any vari
 | Name                          | Description                              | Default |
 | ----------------------------- | ---------------------------------------- | ------- |
 | ghost-base-color              | Background color of ghosts               | #e3e4e4 |
-| ghost-glow-color              | Color of the ghost's "glow"              | #f5f5f5 |
+| ghost-glow-color              | Color of the ghost's glow effect         | #f5f5f5 |
+| ghost-glow-intensity          | Intensity of the glow effect (0 to 1)    | 0.3     |
+| ghost-glow-width              | Width of the glow effect                 | 50%     |
 | ghost-glow-animation-duration | Duration of the ghost animation          | 2000ms  |
 | ghost-glow-animation-function | Animation funtion of the ghost animation | linear  |
 | ghost-font-top-spacing        | Represents the top gap of the font       | 0.15em  |

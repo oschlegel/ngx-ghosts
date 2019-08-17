@@ -3,6 +3,8 @@
 $ngx-ghosts-default-theme: (
   ghost-base-color: #e3e4e4,
   ghost-glow-color: #f5f5f5,
+  ghost-glow-intensity: 0.3,
+  ghost-glow-width: 50%,
   ghost-glow-animation-duration: 2000ms,
   ghost-glow-animation-function: linear,
   ghost-font-top-spacing: 0.15em,

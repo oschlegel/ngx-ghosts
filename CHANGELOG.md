@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.4.0
+
+- **Added** ghost-glow-intensity theme variable to configure the intensity of the glow effect.
+- **Added** ghost-glow-width theme variable to configure the width od the glow effect.
+
 ## 0.3.0
 
 - **Added** GhostComponent to build custom skeletons.

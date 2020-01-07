@@ -92,7 +92,7 @@ Parameters:
 | --------- | ------------------------------------------------ | ---------------- | ------- |
 | ghostText | Toggle between ghost and content                 | boolean          | false   |
 | length    | Length of the ghost                              | number or "fill" | "fill"  |
-| class     | Custom class which is added to the ghost element | string           |         |
+| ghostClass     | Custom class which is added to the ghost element | string           |         |
 
 ### Ghost Text Block Directive
 

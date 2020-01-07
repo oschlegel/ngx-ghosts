@@ -110,7 +110,7 @@ Parameters:
 | -------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------- | ------- |
 | ghostTextBlock | Toggle between ghost and content                                                                 | boolean                             | false   |
 | lines          | Amount and length of lines. When only amount of lines is specified all lines will expand to fill | number or array of number or "fill" | []      |
-| class          | Custom class which is added to the ghost element                                                 | string                              |         |
+| ghostClass          | Custom class which is added to the ghost element                                                 | string                              |         |
 
 ### Ghost
 

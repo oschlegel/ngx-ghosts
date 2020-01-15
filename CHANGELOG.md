@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.1
+
+- **Fixed** Styles for `ghost-font-top-spacing` and `ghost-font-bottom-spacing` theme variables
+
 ## 0.4.0
 
 - **Added** ghost-glow-intensity theme variable to configure the intensity of the glow effect.

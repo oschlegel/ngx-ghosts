@@ -11,8 +11,6 @@
   $ghost-glow-animation-id: unique-id();
 
   .ghost {
-    $bem-block: &;
-
     &::before {
       background-color: $ghost-base-color;
     }
@@ -35,7 +33,7 @@
         bottom: $ghost-font-bottom-spacing;
       }
 
-      #{$bem-block}__glow {
+      .ghost__glow {
         top: $ghost-font-top-spacing;
         bottom: $ghost-font-bottom-spacing;
       }

@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { GhostTextDirective } from './ghost-text/ghost-text.directive';
 import { NgxGhostsConfiguration } from './ngx-ghosts-configuration';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { CommonModule } from '@angular/common';
 import { GhostComponent } from './ghost/ghost.component';
 import { GhostTextBlockDirective } from './ghost-text-block/ghost-text-block.directive';

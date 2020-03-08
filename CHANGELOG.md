@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.3
+
+- **Fixed** Import of ModuleWithProviders in NgxGhostsModule
+
 ## 0.4.1
 
 - **Fixed** Styles for `ghost-font-top-spacing` and `ghost-font-bottom-spacing` theme variables

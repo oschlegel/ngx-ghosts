@@ -10,7 +10,7 @@
 
   $ghost-glow-animation-id: unique-id();
 
-  .ghost {
+  &.ghost {
     &::before {
       background-color: $ghost-base-color;
     }

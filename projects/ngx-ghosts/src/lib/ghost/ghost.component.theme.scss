@@ -14,7 +14,9 @@
     &::before {
       background-color: $ghost-base-color;
     }
-
+  }
+  
+  .ghost {
     &__glow {
       background: linear-gradient(
         to right,

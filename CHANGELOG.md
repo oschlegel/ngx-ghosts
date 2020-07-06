@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.4
+
+- **Fixed** Overrideable styles of ghost component
+
 ## 0.4.3
 
 - **Fixed** Import of ModuleWithProviders in NgxGhostsModule

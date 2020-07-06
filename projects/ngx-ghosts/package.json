@@ -1,6 +1,6 @@
 {
   "name": "ngx-ghosts",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "license": "MIT",
   "description": "Library to create skeleton loading experiences with angular",
   "homepage": "https://github.com/oschlegel/ngx-ghosts",

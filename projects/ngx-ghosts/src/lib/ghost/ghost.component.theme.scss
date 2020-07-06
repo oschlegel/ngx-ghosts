@@ -10,13 +10,12 @@
 
   $ghost-glow-animation-id: unique-id();
 
-  &.ghost {
+  #{if(&, "&", "*")}.ghost,
+  #{if(&, "&", "*")} .ghost {
     &::before {
       background-color: $ghost-base-color;
     }
-  }
-  
-  .ghost {
+
     &__glow {
       background: linear-gradient(
         to right,

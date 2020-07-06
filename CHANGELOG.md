@@ -1,8 +1,10 @@
 # CHANGELOG
 
+## 0.4.5
+
 ## 0.4.4
 
-- **Fixed** Overrideable styles of ghost component
+- **Fixed** Theming for ghost component could not be entierly customized
 
 ## 0.4.3
 

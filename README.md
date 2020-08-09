@@ -5,6 +5,7 @@
 - [NgxGhosts](#ngxghosts)
   - [Installation](#installation)
   - [Components](#components)
+    - [Ghost Box Directive](#ghost-box-directive)
     - [Ghost Text Directive](#ghost-text-directive)
     - [Ghost Text Block Directive](#ghost-text-block-directive)
     - [Ghost](#ghost)
@@ -76,6 +77,27 @@ Now you are ready to add the first ghosts to your application.
 
 ## Components
 
+### Ghost Box Directive
+
+You can add a ghost to any element with the `GhostBox` directive. If height and width are not defined the ghost with fill the surrounding element.
+
+```markup
+<div class="panel">
+  <ng-container *ghostBox="loading">
+    <div>some content</div>
+  </ng-container>
+</div>
+```
+
+Parameters:
+
+| Name       | Description                                      | Type    | Default |
+| ---------- | ------------------------------------------------ | ------- | ------- |
+| ghostBox   | Toggle between ghost and content                 | boolean | false   |
+| height     | Height of the ghost                              | number  |         |
+| width      | Width of the ghost                               | number  |         |
+| ghostClass | Custom class which is added to the ghost element | string  |         |
+
 ### Ghost Text Directive
 
 You can add a ghost to a single line of text, or parts of a text line with the `GhostText` directive. In the example below the "title" requested from a server and a server is shown while the request is pending.
@@ -88,11 +110,11 @@ You can add a ghost to a single line of text, or parts of a text line with the `
 
 Parameters:
 
-| Name      | Description                                      | Type             | Default |
-| --------- | ------------------------------------------------ | ---------------- | ------- |
-| ghostText | Toggle between ghost and content                 | boolean          | false   |
-| length    | Length of the ghost                              | number or "fill" | "fill"  |
-| ghostClass     | Custom class which is added to the ghost element | string           |         |
+| Name       | Description                                      | Type             | Default |
+| ---------- | ------------------------------------------------ | ---------------- | ------- |
+| ghostText  | Toggle between ghost and content                 | boolean          | false   |
+| length     | Length of the ghost                              | number or "fill" | "fill"  |
+| ghostClass | Custom class which is added to the ghost element | string           |         |
 
 ### Ghost Text Block Directive
 
@@ -110,7 +132,7 @@ Parameters:
 | -------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------- | ------- |
 | ghostTextBlock | Toggle between ghost and content                                                                 | boolean                             | false   |
 | lines          | Amount and length of lines. When only amount of lines is specified all lines will expand to fill | number or array of number or "fill" | []      |
-| ghostClass          | Custom class which is added to the ghost element                                                 | string                              |         |
+| ghostClass     | Custom class which is added to the ghost element                                                 | string                              |         |
 
 ### Ghost
 
@@ -125,7 +147,11 @@ Parameters:
 | Name           | Description                                      | Type    | Default |
 | -------------- | ------------------------------------------------ | ------- | ------- |
 | fillHorizontal | Use available horizontal space                   | boolean | false   |
+| fillVertical   | Use available vertical space                     | boolean | false   |
+| height         | Height of the ghost                              | number  |         |
+| width          | Width of the ghost                               | number  |         |
 | ghostClass     | Custom class which is added to the ghost element | string  |         |
+| textGhost      | True if the ghosts represents a text element     | boolean |         |
 
 ## Customization
 

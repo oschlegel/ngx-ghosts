@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.5.0
+
+- **Added** GhostBoxComponent to build larger rectengular skeletons
+
 ## 0.4.5
 
 ## 0.4.4

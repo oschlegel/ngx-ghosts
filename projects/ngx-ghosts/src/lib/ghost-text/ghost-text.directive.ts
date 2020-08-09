@@ -85,6 +85,7 @@ export class GhostTextDirective implements OnInit {
 
     this.viewContainer.clear();
     this.componentRef = this.viewContainer.createComponent(this.componentFactory, 0, this.injector, [[textNode]]);
+    this.componentRef.instance.textGhost = true;
   }
 
   private updateGhostClass(ghostClass: string) {

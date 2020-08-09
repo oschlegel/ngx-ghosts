@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { GhostComponent } from './ghost/ghost.component';
 import { GhostTextBlockDirective } from './ghost-text-block/ghost-text-block.directive';
 import { GhostTextBlockComponent } from './ghost-text-block/ghost-text-block.component';
+import { GhostBoxDirective } from './ghost-box/ghost-box.directive';
 
 export function getConfigProvider(config?: NgxGhostsConfiguration) {
   return !!config ? { provide: NgxGhostsConfiguration, useValue: config } : NgxGhostsConfiguration;
@@ -12,8 +13,14 @@ export function getConfigProvider(config?: NgxGhostsConfiguration) {
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [GhostTextDirective, GhostComponent, GhostTextBlockDirective, GhostTextBlockComponent],
-  exports: [GhostTextDirective, GhostComponent, GhostTextBlockDirective],
+  declarations: [
+    GhostTextDirective,
+    GhostComponent,
+    GhostTextBlockDirective,
+    GhostTextBlockComponent,
+    GhostBoxDirective
+  ],
+  exports: [GhostTextDirective, GhostComponent, GhostTextBlockDirective, GhostBoxDirective],
   entryComponents: [GhostComponent, GhostTextBlockComponent]
 })
 export class NgxGhostsModule {

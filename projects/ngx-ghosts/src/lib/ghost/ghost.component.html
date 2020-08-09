@@ -1,4 +1,11 @@
-<span class="ghost ghost--text {{ ghostClass }}" [class.ghost--fill]="fillHorizontal">
+<span
+  class="ghost {{ ghostClass }}"
+  [class.ghost--text]="textGhost"
+  [class.ghost--fill-horizontal]="fillHorizontal"
+  [class.ghost--fill-vertical]="fillVertical"
+  [style.height]="height + 'px'"
+  [style.width]="width + 'px'"
+>
   <ng-content></ng-content>
   <span class="ghost__glow" [class.ghost__glow--hidden]="glowHidden" [style.left]="glowLeft" [style.width]="glowWidth"
     >&nbsp;</span

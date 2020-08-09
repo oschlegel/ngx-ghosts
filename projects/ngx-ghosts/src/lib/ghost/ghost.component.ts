@@ -54,7 +54,11 @@ export class GhostComponent {
   }
 
   @Input() fillHorizontal = false;
+  @Input() fillVertical = false;
+  @Input() height: number;
+  @Input() width: number;
   @Input() ghostClass: string;
+  @Input() textGhost: boolean;
 
   private document: HTMLDocument;
 

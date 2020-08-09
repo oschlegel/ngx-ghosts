@@ -1,3 +1,5 @@
 <div *ngFor="let line of lines">
-  <ghost [fillHorizontal]="fillHorizontal(line)" [ghostClass]="ghostClass">{{ ghostContent(line) }}</ghost>
+  <ghost [fillHorizontal]="fillHorizontal(line)" [ghostClass]="ghostClass" [textGhost]="true">
+    {{ ghostContent(line) }}
+  </ghost>
 </div>

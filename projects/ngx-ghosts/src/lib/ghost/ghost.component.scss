@@ -32,7 +32,11 @@
     }
   }
 
-  &--fill {
+  &--fill-horizontal {
     width: 100%;
+  }
+
+  &--fill-vertical {
+    height: 100%;
   }
 }

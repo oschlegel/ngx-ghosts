@@ -24,7 +24,7 @@ export function getConfigProvider(config?: NgxGhostsConfiguration) {
   entryComponents: [GhostComponent, GhostTextBlockComponent]
 })
 export class NgxGhostsModule {
-  public static forRoot(config?: NgxGhostsConfiguration): ModuleWithProviders {
+  public static forRoot(config?: NgxGhostsConfiguration): ModuleWithProviders<NgxGhostsModule> {
     return {
       ngModule: NgxGhostsModule,
       providers: [getConfigProvider(config)]

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.5.1
+
+- **Changed** Adjust ghost module to support angular 10
+
 ## 0.5.0
 
 - **Added** GhostBoxComponent to build larger rectengular skeletons

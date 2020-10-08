@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/oschlegel/ngx-ghosts.git"
   },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/common": "^8.0.1",
     "@angular/core": "^8.0.1"

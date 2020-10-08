@@ -8,11 +8,12 @@ if [ "$VERSIONTYPE" == "" ]; then
     exit 1
 fi
 
-cd projects/ngx-ghosts
+cd libs/ngx-ghosts
 npm version $VERSIONTYPE
 
 cd ../..
-npm run ngx-ghosts:build
+npx ng run ngx-ghosts:build
+npx scss-bundle -c libs/ngx-ghosts/scss-bundle.config.json
 
-cd dist/ngx-ghosts
+cd dist/libs/ngx-ghosts
 npm publish

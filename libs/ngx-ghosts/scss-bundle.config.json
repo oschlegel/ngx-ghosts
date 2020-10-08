@@ -1,0 +1,7 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./libs/ngx-ghosts/src/theme.scss",
+    "outFile": "./dist/libs/ngx-ghosts/theme.scss",
+    "logLevel": "silent"
+  }
+}

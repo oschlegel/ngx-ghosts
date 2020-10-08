@@ -1,0 +1,28 @@
+@import '../../../libs/ngx-ghosts/src/theme.scss';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.mat-primary {
+  @include ngx-ghosts-theme(
+    (
+      ghost-base-color: rgba(0, 0, 0, 0.26),
+      ghost-glow-color: #3f51b5,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

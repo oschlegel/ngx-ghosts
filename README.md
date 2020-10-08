@@ -13,7 +13,7 @@
     - [Custom Configuration](#custom-configuration)
     - [Custom theme](#custom-theme)
 
-[Live Demo](https://stackblitz.com/github/oschlegel/ngx-ghosts-demo)
+[Live Demo](https://peaceful-lamarr-3e8d42.netlify.app/)
 
 ## Installation
 

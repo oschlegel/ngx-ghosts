@@ -2,5 +2,8 @@
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "target": "es2015"
-  }
+  },
+  "include": [
+    "projects/ngx-ghosts-app/src/**/*.d.ts"
+  ]
 }

@@ -60,7 +60,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -92,7 +95,10 @@
           "options": {
             "jestConfig": "apps/demo/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/demo"
+          ]
         }
       }
     },
@@ -155,7 +161,10 @@
           "options": {
             "jestConfig": "libs/ngx-ghosts/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/ngx-ghosts"
+          ]
         }
       },
       "schematics": {

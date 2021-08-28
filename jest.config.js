@@ -1,3 +1,3 @@
-module.exports = {
-  projects: ['<rootDir>/apps/demo', '<rootDir>/libs/ngx-ghosts'],
-};
+const { getJestProjects } = require('@nrwl/jest');
+
+module.exports = { projects: getJestProjects() };

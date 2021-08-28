@@ -1,10 +1,18 @@
+@use "sass:math";
+
 @mixin ngx-ghosts-ghost-theme($theme) {
   $ghost-base-color: map-get($theme, ghost-base-color);
   $ghost-glow-color: map-get($theme, ghost-glow-color);
   $ghost-glow-intensity: map-get($theme, ghost-glow-intensity);
   $ghost-glow-width: map-get($theme, ghost-glow-width);
-  $ghost-glow-animation-duration: map-get($theme, ghost-glow-animation-duration);
-  $ghost-glow-animation-function: map-get($theme, ghost-glow-animation-function);
+  $ghost-glow-animation-duration: map-get(
+    $theme,
+    ghost-glow-animation-duration
+  );
+  $ghost-glow-animation-function: map-get(
+    $theme,
+    ghost-glow-animation-function
+  );
   $ghost-font-top-spacing: map-get($theme, ghost-font-top-spacing);
   $ghost-font-bottom-spacing: map-get($theme, ghost-font-bottom-spacing);
 
@@ -20,7 +28,8 @@
       background: linear-gradient(
         to right,
         transparentize($ghost-base-color, 0.999) 0%,
-        transparentize($ghost-glow-color, $ghost-glow-intensity) ($ghost-glow-width / 2),
+        transparentize($ghost-glow-color, $ghost-glow-intensity)
+          (math.div($ghost-glow-width, 2)),
         transparentize($ghost-base-color, 0.999) $ghost-glow-width
       );
       animation-duration: $ghost-glow-animation-duration;

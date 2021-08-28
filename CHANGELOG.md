@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.0
+
+- **Changed** Update to version 12 of angular and nx
+
 ## 0.5.1
 
 - **Changed** Adjust ghost module to support angular 10

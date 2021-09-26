@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { GhostImageState } from 'ngx-ghosts';
 import { Product } from './product';
 
 @Component({
@@ -87,5 +88,9 @@ export class AppComponent {
   toggleLoading() {
     this.loading = !this.loading;
     this.viewProducts = this.loading ? this.loaderProducts : this.products;
+  }
+
+  onGhostImageStateChange(state: GhostImageState) {
+    console.log('onGhostImageStateChange', state);
   }
 }

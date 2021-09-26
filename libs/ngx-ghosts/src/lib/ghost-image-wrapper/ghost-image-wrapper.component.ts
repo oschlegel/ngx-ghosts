@@ -4,11 +4,13 @@ import {
   Component,
   ContentChild,
   ElementRef,
+  EventEmitter,
   HostBinding,
   OnDestroy,
+  Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { BehaviorSubject, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, of, ReplaySubject, timer } from 'rxjs';
 import {
   delay,
   filter,
@@ -41,6 +43,8 @@ export class GhostImageMissingOrInvalidError extends Error {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
+  @Output() state = new EventEmitter<GhostImageState>();
+
   @HostBinding('class.ghost-image-wrapper') ghostImageClass = true;
 
   @ContentChild(GhostImageDirective, { read: ElementRef })
@@ -94,28 +98,19 @@ export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
     // Handle onload event of image
     this.imageEl.onload = () => this.state$.next('transitioning');
 
-    // Handle transitioning state
-    this.state$
-      .pipe(
-        filter((state) => state === 'transitioning'),
-        delay(500),
-        takeUntil(this.destroy$)
-      )
-      .subscribe(() => this.state$.next('loaded'));
-
-    // Update classlist for state changes
+    // Handle changes of state
     this.state$
       .pipe(startWith(null), pairwise(), takeUntil(this.destroy$))
       .subscribe(([oldState, newState]) => {
-        if (!oldState) {
-          this.elementRef.nativeElement.classList.add(
-            `ghost-image-wrapper--${newState}`
-          );
+        // Update class of host element basded on state
+        this.updateHostElClass(oldState, newState);
+
+        // Update state from transitioning to loaded after animation completes
+        if (newState === 'transitioning') {
+          timer(500).subscribe(() => this.state$.next('loaded'));
         }
-        this.elementRef.nativeElement.classList.replace(
-          `ghost-image-wrapper--${oldState}`,
-          `ghost-image-wrapper--${newState}`
-        );
+
+        this.state.emit(newState);
       });
   }
 
@@ -181,5 +176,20 @@ export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
     }
 
     this.imageMutationObserver.observe(this.imageEl, { attributes: true });
+  }
+
+  private updateHostElClass(
+    oldState: GhostImageState,
+    newState: GhostImageState
+  ) {
+    if (!oldState) {
+      this.elementRef.nativeElement.classList.add(
+        `ghost-image-wrapper--${newState}`
+      );
+    }
+    this.elementRef.nativeElement.classList.replace(
+      `ghost-image-wrapper--${oldState}`,
+      `ghost-image-wrapper--${newState}`
+    );
   }
 }

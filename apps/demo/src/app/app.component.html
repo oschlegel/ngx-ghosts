@@ -46,7 +46,10 @@
             product.description
           }}</ng-container>
         </div>
-        <ghost-image-wrapper class="someClass">
+        <ghost-image-wrapper
+          class="someClass"
+          (state)="onGhostImageStateChange($event)"
+        >
           <img ghostImage [src]="product.image" alt="" />
           <ghost ghostImageLoader [height]="256" [width]="256"></ghost>
         </ghost-image-wrapper>

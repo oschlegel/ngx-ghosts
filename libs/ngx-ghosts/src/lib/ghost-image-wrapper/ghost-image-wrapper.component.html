@@ -1,0 +1,6 @@
+<ng-content *ngIf="imageActive$ | async" select="[ghostImage]"></ng-content>
+
+<ng-content
+  *ngIf="ghostActive$ | async"
+  select="[ghostImageLoader]"
+></ng-content>

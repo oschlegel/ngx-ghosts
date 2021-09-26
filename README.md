@@ -6,6 +6,7 @@
   - [Installation](#installation)
   - [Components](#components)
     - [Ghost Box Directive](#ghost-box-directive)
+    - [Ghost Image](#ghost-image)
     - [Ghost Text Directive](#ghost-text-directive)
     - [Ghost Text Block Directive](#ghost-text-block-directive)
     - [Ghost](#ghost)
@@ -97,6 +98,17 @@ Parameters:
 | height     | Height of the ghost                              | number  |         |
 | width      | Width of the ghost                               | number  |         |
 | ghostClass | Custom class which is added to the ghost element | string  |         |
+
+### Ghost Image
+
+You can add a ghost to your imagesWith `GhostImageWrapper` component. To leverage image loading capabilities of ngx-ghosts you have to wrap your image element with `GhostImageWrapper` component, add `GhostImage` directive to the image element and define a ghost with `GhostImageLoader` directive. The image will be loaded as soon as the element enters the visible screen.
+
+```markup
+<ghost-image-wrapper>
+  <img ghostImage [src]="..." [srcset]="..." />
+  <ghost ghostImageLoader [height]="256" [width]="256"></ghost>
+</ghost-image-wrapper>
+```
 
 ### Ghost Text Directive
 

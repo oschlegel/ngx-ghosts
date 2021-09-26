@@ -5,7 +5,9 @@
     <button mat-button [disabled]="loading">
       <mat-icon class="toolbar_icon">account_circle</mat-icon>
       <span>
-        <ng-container *ghostText="loading; length: 14">Max Mustermann</ng-container>
+        <ng-container *ghostText="loading; length: 14"
+          >Max Mustermann</ng-container
+        >
       </span>
     </button>
     <button mat-button [disabled]="loading">
@@ -16,25 +18,38 @@
 </mat-toolbar>
 
 <div class="page-wrapper">
-  <div class="page-title">Products</div>
+  <div class="page-header">
+    <div class="page-title">Products</div>
+
+    <mat-slide-toggle [checked]="loading" (toggleChange)="toggleLoading()"
+      >Loading</mat-slide-toggle
+    >
+  </div>
 
   <div class="product-list">
-    <mat-card class="product-list_item" *ngFor="let product of products">
+    <mat-card class="product-list_item" *ngFor="let product of viewProducts">
       <mat-card-header>
         <mat-card-title>
-          <ng-container *ghostText="loading; length: 15">{{ product.name }}</ng-container>
+          <ng-container *ghostText="loading; length: 15">{{
+            product.name
+          }}</ng-container>
         </mat-card-title>
         <mat-card-subtitle>
-          <ng-container *ghostText="loading; length: 8">Prize: {{ product.prize }}€</ng-container>
+          <ng-container *ghostText="loading; length: 8"
+            >Prize: {{ product.prize }}€</ng-container
+          >
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <div>
-          <ng-container *ghostTextBlock="loading; lines: ['fill', 44]">{{ product.description }}</ng-container>
+          <ng-container *ghostTextBlock="loading; lines: ['fill', 44]">{{
+            product.description
+          }}</ng-container>
         </div>
-        <ng-container *ghostBox="loading; height: 256; width: 256">
-          <img src="assets/firetruck.png" alt="" />
-        </ng-container>
+        <ghost-image-wrapper class="someClass">
+          <img ghostImage [src]="product.image" alt="" />
+          <ghost ghostImageLoader [height]="256" [width]="256"></ghost>
+        </ghost-image-wrapper>
       </mat-card-content>
       <mat-card-actions>
         <button mat-button [disabled]="loading">Add to Card</button>
@@ -42,5 +57,4 @@
     </mat-card>
   </div>
   <mat-paginator [length]="53" [pageSize]="10"> </mat-paginator>
-  <mat-slide-toggle [checked]="loading" (toggleChange)="toggleLoading()">Loading</mat-slide-toggle>
 </div>

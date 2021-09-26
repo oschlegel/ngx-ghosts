@@ -1,0 +1,34 @@
+.ghost-image-wrapper {
+  display: inline-block;
+  position: relative;
+
+  &--initial {
+    [ghostImage] {
+      display: none;
+    }
+  }
+
+  &--loading {
+    [ghostImage] {
+      display: none;
+    }
+  }
+
+  &--transitioning {
+    [ghostImageLoader] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: ghost-image-loader-fade-out 0.5s linear;
+    }
+  }
+}
+
+@keyframes ghost-image-loader-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

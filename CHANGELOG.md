@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.0
+
+- **Added** Ghost image components and directives for loading images
+
 ## 1.0.0
 
 - **Changed** Update to version 12 of angular and nx

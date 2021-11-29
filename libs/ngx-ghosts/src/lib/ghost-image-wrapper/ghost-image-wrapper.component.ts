@@ -8,11 +8,10 @@ import {
   HostBinding,
   OnDestroy,
   Output,
-  ViewEncapsulation,
+  ViewEncapsulation
 } from '@angular/core';
 import { BehaviorSubject, of, ReplaySubject, timer } from 'rxjs';
 import {
-  delay,
   filter,
   map,
   pairwise,
@@ -20,7 +19,7 @@ import {
   switchMap,
   take,
   takeUntil,
-  tap,
+  tap
 } from 'rxjs/operators';
 import { GhostImageState } from './ghost-image-state';
 import { GhostImageDirective } from './ghost-image.directive';
@@ -63,7 +62,7 @@ export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
     map((state) => ['initial', 'loading', 'transitioning'].includes(state))
   );
   imageActive$ = this.state$.pipe(
-    map((state) => ['loading', 'transitioning', 'loaded'].includes(state))
+    map((state) => ['transitioning', 'loaded'].includes(state))
   );
 
   constructor(private elementRef: ElementRef<HTMLElement>) {}

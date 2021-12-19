@@ -8,35 +8,32 @@ import { GhostTextBlockComponent } from './ghost-text-block/ghost-text-block.com
 import { GhostTextBlockDirective } from './ghost-text-block/ghost-text-block.directive';
 import { GhostTextDirective } from './ghost-text/ghost-text.directive';
 import { GhostComponent } from './ghost/ghost.component';
-import { NgxGhostsConfiguration } from './ngx-ghosts-configuration';
-
-export function getConfigProvider(config?: NgxGhostsConfiguration) {
-  return !!config
-    ? { provide: NgxGhostsConfiguration, useValue: config }
-    : NgxGhostsConfiguration;
-}
+import {
+  getConfigProvider,
+  NgxGhostsConfiguration,
+} from './ngx-ghosts-configuration';
 
 @NgModule({
-    imports: [CommonModule],
-    declarations: [
-        GhostTextDirective,
-        GhostComponent,
-        GhostTextBlockDirective,
-        GhostTextBlockComponent,
-        GhostBoxDirective,
-        GhostImageWrapperComponent,
-        GhostImageDirective,
-        GhostImageLoaderDirective,
-    ],
-    exports: [
-        GhostTextDirective,
-        GhostComponent,
-        GhostTextBlockDirective,
-        GhostBoxDirective,
-        GhostImageWrapperComponent,
-        GhostImageDirective,
-        GhostImageLoaderDirective,
-    ]
+  imports: [CommonModule],
+  declarations: [
+    GhostTextDirective,
+    GhostComponent,
+    GhostTextBlockDirective,
+    GhostTextBlockComponent,
+    GhostBoxDirective,
+    GhostImageWrapperComponent,
+    GhostImageDirective,
+    GhostImageLoaderDirective,
+  ],
+  exports: [
+    GhostTextDirective,
+    GhostComponent,
+    GhostTextBlockDirective,
+    GhostBoxDirective,
+    GhostImageWrapperComponent,
+    GhostImageDirective,
+    GhostImageLoaderDirective,
+  ],
 })
 export class NgxGhostsModule {
   public static forRoot(

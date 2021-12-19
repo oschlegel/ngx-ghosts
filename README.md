@@ -24,25 +24,7 @@ First you need to install the npm module:
 npm install ngx-ghosts or yarn install ngx-ghosts
 ```
 
-Import the `NgxGhostsModule` in your `AppModule` like this:
-
-```javascript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { NgxGhostsModule } from 'ngx-ghosts';
-
-
-@NgModule({
-    imports: [
-        BrowserModule,
-        NgxGhostsModule.forRoot()
-    ],
-    bootstrap: [AppComponent]
-})
-export class AppModule { }
-```
-
-Import the `NgxGhostsModule` in your shared, lazy, or other modules like this:
+Import the `NgxGhostsModule` in modules where you want to use ghosts like this:
 
 ```javascript
 @NgModule({
@@ -51,7 +33,7 @@ Import the `NgxGhostsModule` in your shared, lazy, or other modules like this:
         NgxGhostsModule
     ]
 })
-export class SharedModule { }
+export class AppModule { }
 ```
 
 Load the ngx-ghosts theme by adding it to the angular.json like this:
@@ -92,12 +74,13 @@ You can add a ghost to any element with the `GhostBox` directive. If height and 
 
 Parameters:
 
-| Name       | Description                                      | Type    | Default |
-| ---------- | ------------------------------------------------ | ------- | ------- |
-| ghostBox   | Toggle between ghost and content                 | boolean | false   |
-| height     | Height of the ghost                              | number  |         |
-| width      | Width of the ghost                               | number  |         |
-| ghostClass | Custom class which is added to the ghost element | string  |         |
+| Name       | Description                                      | Type            | Default |
+| ---------- | ------------------------------------------------ | --------------- | ------- |
+| ghostBox   | Toggle between ghost and content                 | boolean         | false   |
+| height     | Height of the ghost                              | number          |         |
+| width      | Width of the ghost                               | number          |         |
+| ghostClass | Custom class which is added to the ghost element | string          |         |
+| state      | Emits the current state of the loader            | GhostImageState |         |
 
 ### Ghost Image
 
@@ -191,9 +174,10 @@ export class AppModule { }
 
 The configuration supports following properties:
 
-| Name              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Type                   | Default        |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- | -------------- |
-| animationStrategy | Decide how the animation of your ghosts should behave. You can choose from the following variants: <ul><li>EqualStartAndEnd - All animations start and end at the same time, speed depends on the ghosts length</li><li>EqualStartAndSpeed - All animations start at the same time and have the same speed</li><li>OneAnimation - This looks like there would be only one ghost moving across the whole page</li><li>None - No animation is shown at all</li></ul> | GhostAnimationStrategy | "OneAnimation" |
+| Name                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Type                   | Default        |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- | -------------- |
+| animationStrategy              | Decide how the animation of your ghosts should behave. You can choose from the following variants: <ul><li>EqualStartAndEnd - All animations start and end at the same time, speed depends on the ghosts length</li><li>EqualStartAndSpeed - All animations start at the same time and have the same speed</li><li>OneAnimation - This looks like there would be only one ghost moving across the whole page</li><li>None - No animation is shown at all</li></ul> | GhostAnimationStrategy | "OneAnimation" |
+| imageLoader.transitionDuration | Define the duration of the transition between the ghost and the loaded image in milliseconds.                                                                                                                                                                                                                                                                                                                                                                      | number                 | 500            |
 
 ### Custom theme
 

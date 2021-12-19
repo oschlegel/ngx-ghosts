@@ -7,7 +7,10 @@ import {
   HostListener,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { NgxGhostsConfiguration } from '../ngx-ghosts-configuration';
+import {
+  NgxGhostsConfiguration,
+  NGX_GHOSTS_CONFIGURATION,
+} from '../ngx-ghosts-configuration';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -21,9 +24,9 @@ import { DOCUMENT } from '@angular/common';
 export class GhostComponent {
   // tslint:disable-next-line: no-any
   constructor(
-    private config: NgxGhostsConfiguration,
-    private elementRef: ElementRef,
-    @Inject(DOCUMENT) document: any
+    @Inject(DOCUMENT) document: any,
+    @Inject(NGX_GHOSTS_CONFIGURATION) private config: NgxGhostsConfiguration,
+    private elementRef: ElementRef
   ) {
     this.document = document;
   }

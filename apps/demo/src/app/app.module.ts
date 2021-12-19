@@ -16,7 +16,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NgxGhostsModule.forRoot(),
+    NgxGhostsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

@@ -19,7 +19,11 @@
       position: absolute;
       top: 0;
       left: 0;
-      animation: ghost-image-loader-fade-out 0.5s linear;
+      animation-name: ghost-image-loader-fade-out;
+      animation-duration: var(
+        --transition-animation-duration
+      ); // Variable defined in controller
+      animation-timing-function: linear;
     }
   }
 }

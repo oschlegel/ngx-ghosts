@@ -4,7 +4,7 @@
 
 export { NgxGhostsModule } from './lib/ngx-ghosts.module';
 export * from './lib/models';
-export * from './lib/ngx-ghosts-configuration';
+export { NgxGhostsConfiguration } from './lib/ngx-ghosts-configuration';
 export * from './lib/ghost/ghost.component';
 export * from './lib/ghost-box/ghost-box.directive';
 export * from './lib/ghost-image-wrapper/ghost-image-loader.directive';

@@ -6,13 +6,13 @@ import {
   ElementRef,
   EventEmitter,
   HostBinding,
+  Inject,
   OnDestroy,
   Output,
   ViewEncapsulation,
 } from '@angular/core';
 import { BehaviorSubject, of, ReplaySubject, timer } from 'rxjs';
 import {
-  delay,
   filter,
   map,
   pairwise,
@@ -22,6 +22,10 @@ import {
   takeUntil,
   tap,
 } from 'rxjs/operators';
+import {
+  NgxGhostsConfiguration,
+  NGX_GHOSTS_CONFIGURATION,
+} from '../ngx-ghosts-configuration';
 import { GhostImageState } from './ghost-image-state';
 import { GhostImageDirective } from './ghost-image.directive';
 
@@ -46,6 +50,8 @@ export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
   @Output() state = new EventEmitter<GhostImageState>();
 
   @HostBinding('class.ghost-image-wrapper') ghostImageClass = true;
+  @HostBinding('style.--transition-animation-duration')
+  transitionAnimationDuration = `${this.config.imageLoader.transitionDuration}ms`;
 
   @ContentChild(GhostImageDirective, { read: ElementRef })
   imageRef: ElementRef<HTMLImageElement>;
@@ -66,7 +72,10 @@ export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
     map((state) => ['loading', 'transitioning', 'loaded'].includes(state))
   );
 
-  constructor(private elementRef: ElementRef<HTMLElement>) {}
+  constructor(
+    @Inject(NGX_GHOSTS_CONFIGURATION) private config: NgxGhostsConfiguration,
+    private elementRef: ElementRef<HTMLElement>
+  ) {}
 
   ngAfterViewInit(): void {
     this.initializeIntersectionObserver();
@@ -107,7 +116,9 @@ export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
 
         // Update state from transitioning to loaded after animation completes
         if (newState === 'transitioning') {
-          timer(500).subscribe(() => this.state$.next('loaded'));
+          timer(this.config.imageLoader.transitionDuration).subscribe(() =>
+            this.state$.next('loaded')
+          );
         }
 
         this.state.emit(newState);

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2.0.0
+
+- **Added** Configuration option for ghost image transition duration
+- **Breaking** Update to angular v13 and ivy compilation
+
 ## 1.1.0
 
 - **Added** Ghost image components and directives for loading images

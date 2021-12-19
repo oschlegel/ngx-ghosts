@@ -17,27 +17,26 @@ export function getConfigProvider(config?: NgxGhostsConfiguration) {
 }
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [
-    GhostTextDirective,
-    GhostComponent,
-    GhostTextBlockDirective,
-    GhostTextBlockComponent,
-    GhostBoxDirective,
-    GhostImageWrapperComponent,
-    GhostImageDirective,
-    GhostImageLoaderDirective,
-  ],
-  exports: [
-    GhostTextDirective,
-    GhostComponent,
-    GhostTextBlockDirective,
-    GhostBoxDirective,
-    GhostImageWrapperComponent,
-    GhostImageDirective,
-    GhostImageLoaderDirective,
-  ],
-  entryComponents: [GhostComponent, GhostTextBlockComponent],
+    imports: [CommonModule],
+    declarations: [
+        GhostTextDirective,
+        GhostComponent,
+        GhostTextBlockDirective,
+        GhostTextBlockComponent,
+        GhostBoxDirective,
+        GhostImageWrapperComponent,
+        GhostImageDirective,
+        GhostImageLoaderDirective,
+    ],
+    exports: [
+        GhostTextDirective,
+        GhostComponent,
+        GhostTextBlockDirective,
+        GhostBoxDirective,
+        GhostImageWrapperComponent,
+        GhostImageDirective,
+        GhostImageLoaderDirective,
+    ]
 })
 export class NgxGhostsModule {
   public static forRoot(

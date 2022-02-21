@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.1
+
+- **Changed** update to nx 13.8.3 and angular 13.2.4
+
 ## 2.0.0
 
 - **Added** Configuration option for ghost image transition duration

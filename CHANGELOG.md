@@ -1,5 +1,10 @@
 # CHANGELOG
 
+
+## 2.0.2
+
+- **Changed** update rxjs to 7.4.0
+
 ## 2.0.1
 
 - **Changed** update to nx 13.8.3 and angular 13.2.4

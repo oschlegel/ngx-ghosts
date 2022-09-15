@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 3.0.0
+
+- **Changed** update nx to 14.3.5
+- **Changed** update angular to 14.0.2
+
+## 2.0.5
+
+- **Fixed** Reset state of ghost image when source is becoming undefined
 
 ## 2.0.2
 

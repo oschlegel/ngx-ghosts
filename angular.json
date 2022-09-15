@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "demo": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,10 +21,7 @@
             "main": "apps/demo/src/main.ts",
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
-            "assets": [
-              "apps/demo/src/favicon.ico",
-              "apps/demo/src/assets"
-            ],
+            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/demo/src/styles.scss"
@@ -65,9 +63,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -90,24 +86,21 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/demo/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/demo/src/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/demo/jest.config.js",
+            "jestConfig": "apps/demo/jest.config.ts",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/demo"
-          ]
+          "outputs": ["coverage/apps/demo"]
         }
       }
     },
     "demo-e2e": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/demo-e2e",
       "sourceRoot": "apps/demo-e2e/src",
       "projectType": "application",
@@ -128,14 +121,13 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/demo-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
           }
         }
       }
     },
     "ngx-ghosts": {
+      "$schema": "../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ngx-ghosts",
       "sourceRoot": "libs/ngx-ghosts/src",
@@ -156,20 +148,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/ngx-ghosts/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/ngx-ghosts/src/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ngx-ghosts/jest.config.js",
+            "jestConfig": "libs/ngx-ghosts/jest.config.ts",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/libs/ngx-ghosts"
-          ]
+          "outputs": ["coverage/libs/ngx-ghosts"]
         }
       },
       "schematics": {

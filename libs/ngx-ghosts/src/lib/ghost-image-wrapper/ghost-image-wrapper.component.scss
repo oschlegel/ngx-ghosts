@@ -15,6 +15,10 @@
   }
 
   &--transitioning {
+    [ghostImage] {
+      display: block;
+    }
+
     [ghostImageLoader] {
       position: absolute;
       top: 0;
@@ -24,6 +28,12 @@
         --transition-animation-duration
       ); // Variable defined in controller
       animation-timing-function: linear;
+    }
+  }
+
+  &--loaded {
+    [ghostImage] {
+      display: block;
     }
   }
 }

@@ -84,6 +84,11 @@ export class GhostImageWrapperComponent implements AfterViewInit, OnDestroy {
     // Handle changes of src attributes
     this.imageSources$
       .pipe(
+        tap(({ src, srcset }) => {
+          if (!src && !srcset) {
+            this.state$.next('initial');
+          }
+        }),
         filter(({ src, srcset }) => !!src || !!srcset),
         tap(() => {
           if (!this.isIntersecting$.value) {

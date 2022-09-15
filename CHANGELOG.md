@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.6
+
+- **Fixed** Broken build
+
 ## 2.0.5
 
 - **Fixed** Reset state of ghost image when source is becoming undefined

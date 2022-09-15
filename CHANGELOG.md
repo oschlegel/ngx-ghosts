@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2.0.5
+
+- **Fixed** Reset state of ghost image when source is becoming undefined
 
 ## 2.0.2
 

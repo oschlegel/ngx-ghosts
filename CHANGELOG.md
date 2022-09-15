@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.6
+
+- **Fixed** Broken build
+
 ## 3.0.0
 
 - **Changed** update nx to 14.3.5

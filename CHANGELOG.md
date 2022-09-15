@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.0.7
+
+- **Fixed** White space displayed below the image of ghost image
+
 ## 2.0.6
 
 - **Fixed** Broken build

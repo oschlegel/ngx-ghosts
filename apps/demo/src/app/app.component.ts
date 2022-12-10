@@ -1,5 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { GhostImageState } from 'ngx-ghosts';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { GhostImageState, NgxGhostsModule } from 'ngx-ghosts';
 import { Product } from './product';
 
 @Component({
@@ -7,6 +14,17 @@ import { Product } from './product';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    CommonModule,
+    NgxGhostsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatSlideToggleModule,
+  ],
 })
 export class AppComponent {
   loading = true;

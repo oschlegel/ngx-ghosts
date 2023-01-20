@@ -7,7 +7,7 @@
   color: rgba(0, 0, 0, 0);
 
   &::before {
-    content: '&nbsp;';
+    content: '\a0';
     position: absolute;
     left: 0;
     right: 0;

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.0.1
+
+- **Fixed** Non-breaking space in ghost text visible in high contrast mode
+
 ## 4.0.0
 
 - **Changed** update nx to 15.3.0

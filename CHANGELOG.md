@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 5.0.1
+
+- **Fixed** Peer dependencies
+
 ## 5.0.0
 
 - **Changed** update nx to 16.3.2

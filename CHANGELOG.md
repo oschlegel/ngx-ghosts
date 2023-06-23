@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 5.0.0
+
+- **Changed** update nx to 16.3.2
+- **Changed** update angular to 16.0.6
+
 ## 4.0.1
 
 - **Fixed** Non-breaking space in ghost text visible in high contrast mode

@@ -6,7 +6,7 @@
   "prefix": "ngx-ghosts",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "options": {
         "tsConfig": "libs/ngx-ghosts/tsconfig.lib.json",
         "project": "libs/ngx-ghosts/ng-package.json"
@@ -24,7 +24,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
         "jestConfig": "libs/ngx-ghosts/jest.config.ts",
         "passWithNoTests": true

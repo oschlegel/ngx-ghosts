@@ -5,7 +5,7 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
         "parallel": 1,
@@ -14,7 +14,15 @@
     }
   },
   "generators": {
-    "@nrwl/angular": {
+    "@nx/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nx/angular:library": {
+      "unitTestRunner": "jest",
+      "strict": true
+    },
+    "@nx/angular": {
       "application": {
         "linter": "eslint"
       },
@@ -24,14 +32,6 @@
       "storybook-configuration": {
         "linter": "eslint"
       }
-    },
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest",
-      "strict": true
     }
   },
   "defaultProject": "demo",

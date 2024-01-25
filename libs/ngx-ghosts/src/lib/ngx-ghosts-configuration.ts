@@ -1,4 +1,4 @@
-import { Injectable, InjectionToken } from '@angular/core';
+import { InjectionToken } from '@angular/core';
 import { GhostAnimationStrategy } from './models';
 
 export interface NgxGhostsConfiguration {
@@ -24,6 +24,7 @@ export const NGX_GHOSTS_CONFIGURATION =
   });
 
 export function getConfigProvider(config?: NgxGhostsConfiguration) {
+  // eslint-disable-next-line no-extra-boolean-cast
   const configFinal = !!config
     ? Object.assign({}, defaultNgxGhostsConfiguration, config)
     : defaultNgxGhostsConfiguration;

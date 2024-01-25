@@ -22,8 +22,8 @@ import { DOCUMENT } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GhostComponent {
-  // tslint:disable-next-line: no-any
   constructor(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     @Inject(DOCUMENT) document: any,
     @Inject(NGX_GHOSTS_CONFIGURATION) private config: NgxGhostsConfiguration,
     private elementRef: ElementRef
@@ -37,6 +37,7 @@ export class GhostComponent {
       case 'EqualStartAndSpeed':
         return '0px';
       case 'OneAnimation':
+        // eslint-disable-next-line no-case-declarations
         const left = this.elementRef.nativeElement.getBoundingClientRect().left;
         return `-${left}px`;
       default:

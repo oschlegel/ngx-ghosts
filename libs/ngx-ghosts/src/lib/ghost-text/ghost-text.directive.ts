@@ -47,12 +47,12 @@ export class GhostTextDirective implements OnInit {
   private document: HTMLDocument;
 
   constructor(
-    // tslint:disable-next-line:no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver,
     private injector: Injector,
-    // tslint:disable-next-line: no-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     @Inject(DOCUMENT) document: any
   ) {
     this.componentFactory = this.componentFactoryResolver.resolveComponentFactory(GhostComponent);

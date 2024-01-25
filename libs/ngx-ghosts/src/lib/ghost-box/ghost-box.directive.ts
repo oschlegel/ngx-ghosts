@@ -1,4 +1,3 @@
-// tslint:disable: no-input-rename
 import {
   Directive,
   Input,

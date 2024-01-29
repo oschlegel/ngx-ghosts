@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 6.0.0
+
+- **Changed** update nx to 17.2.8
+- **Changed** update angular to 17.0.3
+
 ## 5.0.1
 
 - **Fixed** Peer dependencies

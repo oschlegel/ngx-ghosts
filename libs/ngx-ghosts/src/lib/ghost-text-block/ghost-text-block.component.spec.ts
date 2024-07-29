@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GhostTextBlockComponent } from './ghost-text-block.component';
 
@@ -6,9 +6,9 @@ describe('TextBlockComponent', () => {
   let component: GhostTextBlockComponent;
   let fixture: ComponentFixture<GhostTextBlockComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [GhostTextBlockComponent]
+      declarations: [GhostTextBlockComponent],
     }).compileComponents();
   }));
 

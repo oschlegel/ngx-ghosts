@@ -1,10 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NgxGhostsModule } from '../ngx-ghosts.module';
-import { GhostTextDirective } from 'ngx-ghosts';
+import { GhostTextDirective } from './ghost-text.directive';
 
-let fixture: ComponentFixture<TestComponent>
+let fixture: ComponentFixture<TestComponent>;
 @Component({
   standalone: true,
   template: `<p *ghostText="true">Some text to be ghosted</p>`,
@@ -22,7 +22,8 @@ describe('GhostTextLineDirective', () => {
   });
 
   it('should be created', () => {
-    expect(fixture.debugElement.queryAll(By.directive(GhostTextDirective))).toBeDefined();
-  })
+    expect(
+      fixture.debugElement.queryAll(By.directive(GhostTextDirective))
+    ).toBeDefined();
+  });
 });
-

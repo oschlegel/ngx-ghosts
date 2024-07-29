@@ -1,7 +1,4 @@
 {
-  "affected": {
-    "defaultBase": "master"
-  },
   "generators": {
     "@nx/angular:application": {
       "unitTestRunner": "jest",
@@ -69,5 +66,7 @@
     ]
   },
   "nxCloudAccessToken": "MzAyM2I2MTAtMjFmZS00Yzk1LTkzOGQtNjE1NGI5NDQ2ZDE2fHJlYWQtd3JpdGU=",
-  "parallel": 1
+  "parallel": 1,
+  "useInferencePlugins": false,
+  "defaultBase": "master"
 }

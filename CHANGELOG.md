@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 7.0.0
+
+- **Changed** update nx to 19.5.3
+- **Changed** update angular to 18.1.2
+
 ## 6.0.0
 
 - **Changed** update nx to 17.2.8
